@@ -159,7 +159,7 @@ cost is a requirement, and you configure it on day one.
 **Reading:** Book Ch. 1–2 · Sculley et al., *Hidden Technical Debt in ML Systems*;
 Zinkevich, *Rules of Machine Learning*.
 
-**Project:** Scaffold running end to end. **P1 assigned.**
+**Project:** none this week. **P1 is assigned in Week 2.**
 
 ---
 
@@ -189,6 +189,8 @@ it in P1's blind-spot register.)
 
 **Reading:** Book Ch. 3–4 · Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*;
 NIST AI RMF core (skim).
+
+**Project:** Scaffold running end to end. **P1 assigned — Measure it.**
 
 ---
 
@@ -609,7 +611,7 @@ design doc for what you built, an hour target, and a quota budget.
 
 | Project | Assigned | Due | You replace / add | Hours |
 |---|---|---|---|---|
-| **P1 — Measure it** | Wk 1 | Wk 4 | Eval harness: golden set, slices, noise floor, validated judge, blind-spot register | ~12 |
+| **P1 — Measure it** | Wk 2 | Wk 4 | Eval harness: golden set, slices, noise floor, validated judge, blind-spot register | ~12 |
 | **P2 — Ship it** | Wk 4 | Wk 7 | Eval gate in CI (replay fixtures + live smoke), canary with kill switch, cost model, telemetry | ~12 |
 | **P3 — Make it act** | Wk 8 | Wk 11 | Your agent loop and orchestrator: discovery and dispatch over the capability server, budgets, checkpoint/resume across invocations, approval gate, scoped token | ~12 |
 | **P4 — Break it, run it** | Wk 11 | Wk 13 | Hardening after the red team, SLOs, tracing, game-day postmortem | ~12 |

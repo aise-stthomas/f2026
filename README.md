@@ -43,10 +43,10 @@ Links appear as material is released. Remaining dates will be filled in as the s
 
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | [P1 assigned: Measure it](projects/p1-measure-it.md) |
-| 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | |
+| 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | P1 assigned: Measure it. |
 | 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | |
-| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | [P1 due](projects/p1-measure-it.md). P2 assigned. |
+| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | P1 due. P2 assigned. |
 | 5 | | Evaluation I: offline | | | | Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected) | |
 | 6 | | Evaluation II: online, and shipping a change | | | | Google SRE Book: handling overload, cascading failures | |
 | 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | | P2 due. |
@@ -76,7 +76,7 @@ ships with the reference solution to the previous one. Specifications are in the
 
 | Project | Assigned | Due | You replace or add |
 |---|---|---|---|
-| [P1 — Measure it](projects/p1-measure-it.md) | Wk 1 | Wk 4 | Eval harness: golden set, slices, noise floor, validated judge, blind-spot register |
+| P1 — Measure it | Wk 2 | Wk 4 | Eval harness: golden set, slices, noise floor, validated judge, blind-spot register |
 | P2 — Ship it | Wk 4 | Wk 7 | Eval gate in CI, canary with kill switch, cost model, telemetry |
 | P3 — Make it act | Wk 8 | Wk 11 | Your own agent loop and orchestrator over the capability server |
 | P4 — Break it, run it | Wk 11 | Wk 13 | Hardening after the red team, SLOs, tracing, game-day postmortem |

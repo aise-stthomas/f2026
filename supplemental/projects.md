@@ -160,7 +160,7 @@ target, a quota budget, and the rubric emphasis. Pairs. Repositories are tagged 
 deadline.
 
 ### P1 — Measure it
-**Assigned Week 1 · Due Week 4 · ~12 hours · Weight 10%**
+**Assigned Week 2 · Due Week 4 · ~12 hours · Weight 10%**
 
 *The scaffold "works." Prove it, per slice, with a noise floor — and say what you cannot see.*
 
@@ -308,7 +308,7 @@ would actually have fired; a postmortem whose root cause is a distribution shift
 
 | Weeks | Reading | Project | Total/wk |
 |---|---|---|---|
-| 1–4 (P1) | ~1.5 | ~3 | ~4.5 |
+| 2–4 (P1) | ~1.5 | ~3 | ~4.5 |
 | 5–7 (P2) | ~1.5 | ~4 | ~5.5 |
 | 8–11 (P3) | ~1.5 | ~3 | ~4.5 |
 | 12–13 (P4) | ~1 | ~6 | ~7 |
