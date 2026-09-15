@@ -1,0 +1,15 @@
+# GitHub Pages — served from the repository root on main.
+title: AI Systems Engineering · Fall 2026
+description: Course guide for the Fall 2026 offering at the University of St. Thomas.
+theme: jekyll-theme-cayman
+show_downloads: false
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+relative_links:
+  enabled: true
+  collections: false
