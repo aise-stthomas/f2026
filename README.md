@@ -39,22 +39,22 @@ The full policies are in the [syllabus](syllabus.md).
 
 ## Schedule
 
-Links appear as material is released. Remaining dates will be filled in as the semester proceeds.
+Links appear as material is released. Remaining dates will be filled in as the semester proceeds. Reading is assigned at the end of each block for the next one, as on the closing slide; the [syllabus](syllabus.md) lists the same readings by the week they are discussed. Background for the first block, read before or after it: Sculley et al., *Hidden Technical Debt in ML Systems*; Zinkevich, *Rules of Machine Learning*.
 
-| Wk | Date | Topic | Slides | Design studio | Lab | Reading | Project |
+| Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in ML Systems*; Zinkevich, *Rules of Machine Learning* | Scaffold running end to end. P1 assigned. |
-| 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Kaestner, *Machine Learning in Production*, risk chapters; NIST AI RMF core (skim) | |
-| 3 | | Architecture and the trade space | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | |
-| 4 | | Data as specification, and retrieval | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | P1 due. P2 assigned. |
-| 5 | | Evaluation I: offline | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | |
-| 6 | | Evaluation II: online, and shipping a change | | | | Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected) | |
-| 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | Google SRE Book: handling overload, cascading failures | P2 due. |
-| 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
-| 9 | | Agents I: the mechanism | | | | Anthropic, *Building Effective Agents*; a provider's tool-use API, read as a wire format | |
-| 10 | | Agents II: state, orchestration, and delegation | | | | | |
-| 11 | | The integration and trust layer | | | | The capability-protocol specification the scaffold uses, read as a primary source | P3 due. P4 assigned. |
-| 12 | | Security and safety for agentic systems | | | | Willison on prompt injection and the lethal trifecta; OWASP Top 10 for LLM Applications | |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Kaestner, *Machine Learning in Production*, risk chapters; NIST AI RMF core (skim) | Scaffold running end to end. P1 assigned. |
+| 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | |
+| 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | |
+| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | P1 due. P2 assigned. |
+| 5 | | Evaluation I: offline | | | | Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected) | |
+| 6 | | Evaluation II: online, and shipping a change | | | | Google SRE Book: handling overload, cascading failures | |
+| 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | | P2 due. |
+| 8 | | Checkpoint exam and project clinic | | | | Anthropic, *Building Effective Agents*; a provider's tool-use API, read as a wire format | P3 assigned. |
+| 9 | | Agents I: the mechanism | | | | | |
+| 10 | | Agents II: state, orchestration, and delegation | | | | The capability-protocol specification the scaffold uses, read as a primary source | |
+| 11 | | The integration and trust layer | | | | Willison on prompt injection and the lethal trifecta; OWASP Top 10 for LLM Applications | P3 due. P4 assigned. |
+| 12 | | Security and safety for agentic systems | | | | | |
 | 13 | | Operating a live AI system | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
 
