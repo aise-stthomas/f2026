@@ -10,3 +10,4 @@ rubric open during every studio; reread the reference design before each exam.
 | [Reference design](reference-design.md) | The Operator, the project system, through all seven steps at level 4. |
 | [Common system components](common-system-components.md) | A one-page vocabulary for the parts that appear in AI system designs. |
 | [Projects, scaffold, and budgets](projects.md) | The four cumulative pair projects, the scaffold, and the AWS / Gemini budgets. |
+| [Configuring AWS](configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |

@@ -39,8 +39,6 @@ The full policies are in the [syllabus](syllabus.md).
 
 ## Schedule
 
-Links appear as material is released. Remaining dates will be filled in as the semester proceeds. Reading is assigned at the end of each block for the next one, as on the closing slide; the [syllabus](syllabus.md) lists the same readings by the week they are discussed. Background for the first block, read before or after it: Zinkevich, *Rules of Machine Learning*.
-
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
 | 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | |
@@ -67,6 +65,7 @@ Links appear as material is released. Remaining dates will be filled in as the s
 | [Reference design](supplemental/reference-design.md) | The Operator through all seven steps at level 4. |
 | [Common system components](supplemental/common-system-components.md) | A one-page vocabulary for AI system designs. |
 | [Projects, scaffold, and budgets](supplemental/projects.md) | The four cumulative pair projects and the budgets. |
+| [Configuring AWS](supplemental/configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 
 ## Projects
 
