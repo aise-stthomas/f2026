@@ -61,17 +61,14 @@ The full policies are in the [syllabus](syllabus.md).
 | Document | What it is |
 |---|---|
 | [Course thesis](supplemental/course-thesis.md) | What is different about AI systems, and the gate every topic must pass. |
-| [Design review rubric](supplemental/rubric.md) | Seven steps by four levels. The standard the studios and both exams grade against. |
-| [Reference design](supplemental/reference-design.md) | The Operator through all seven steps at level 4. |
 | [Common system components](supplemental/common-system-components.md) | A one-page vocabulary for AI system designs. |
-| [Projects, scaffold, and budgets](supplemental/projects.md) | The four cumulative pair projects and the budgets. |
 | [Configuring AWS](supplemental/configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 
 ## Projects
 
 Four cumulative pair projects on one scaffolded system, about twelve hours each. Each
 ships with the reference solution to the previous one. Specifications are in the
-[projects document](supplemental/projects.md).
+[projects document](https://aise-stthomas.github.io/projects) on the course site.
 
 | Project | Assigned | Due | You replace or add |
 |---|---|---|---|

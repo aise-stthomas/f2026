@@ -4,7 +4,7 @@
 > **Draft status.** v3 restructures assessment around four cumulative pair projects on a
 > shared scaffold, caps outside-class work at 5 hours/week, and fixes the infrastructure
 > to what an AWS Academy Learner Lab budget and the Gemini free tier can carry. Project specs, the
-> scaffold, and budgets are in [projects.md](supplemental/projects.md). Exam design is a placeholder (see Week 8
+> scaffold, and budgets are in [projects.md](https://aise-stthomas.github.io/projects). Exam design is a placeholder (see Week 8
 > and Week 14). Semester dates and grading boundaries are placeholders.
 
 ---
@@ -49,7 +49,7 @@ report it.
 
 **Cost to you: $0.** The projects run on an AWS Academy Learner Lab account, provided
 by the course with a $50 semester budget and no card, and the Gemini free tier. See
-[projects.md](supplemental/projects.md) for the account setup and the budget rules.
+[projects.md](https://aise-stthomas.github.io/projects) for the account setup and the budget rules.
 
 ## Learning outcomes
 
@@ -80,7 +80,7 @@ By the end of this course you will be able to:
 ## The design framework
 
 Introduced in Week 1, used every week, and the rubric for both exams. Level descriptors
-for each step are published in [rubric.md](supplemental/rubric.md).
+for each step are published in [rubric.md](https://aise-stthomas.github.io/rubric).
 
 | # | Step | Deepened in |
 |---|---|---|
@@ -124,7 +124,7 @@ AI-specific parts with your own — the evaluation harness (P1), the release gat
 telemetry (P2), the agent loop and orchestrator (P3), the hardening and operations
 (P4) — and by Week 13 you are running a system you built the parts of that matter.
 Each project ships with the reference solution for the previous one, so nobody builds
-on a broken base. Full specs, the scaffold contents, and the budgets: [projects.md](supplemental/projects.md).
+on a broken base. Full specs, the scaffold contents, and the budgets: [projects.md](https://aise-stthomas.github.io/projects).
 
 ---
 
@@ -596,7 +596,7 @@ demo runs off the tag.
 | Component | Weight | Notes |
 |---|---|---|
 | Weekly homework | 10% | 10 multiple-choice questions, ~20 minutes, assigned after each block and due before the next: applied questions on the studio scenario plus 2–3 that can only be answered by having done the lab. Deliberately quick; you get the full week because you have lives. Lowest score dropped. |
-| Projects (4) | 40% | 10 each. Pairs. See [projects.md](supplemental/projects.md). |
+| Projects (4) | 40% | 10 each. Pairs. See [projects.md](https://aise-stthomas.github.io/projects). |
 | Checkpoint exam | 20% | Week 8, in the block. |
 | Final exam | 15% | Week 14, take-home timed window. |
 | Demo and defense | 15% | Week 14, live. The one assessment nobody can game. |
@@ -606,7 +606,7 @@ theater. The weekly homework verifies both.
 
 ### Projects, briefly
 
-Full specs in [projects.md](supplemental/projects.md). Each project: what you replace in the scaffold, a one-page
+Full specs in [projects.md](https://aise-stthomas.github.io/projects). Each project: what you replace in the scaffold, a one-page
 design doc for what you built, an hour target, and a quota budget.
 
 | Project | Assigned | Due | You replace / add | Hours |
@@ -664,7 +664,7 @@ happens.
 **Cost.** Everything runs on an AWS Academy Learner Lab account and the Gemini free
 tier. The usage alarms you set in Week 1 are required. No EC2 instances, NAT gateways,
 load balancers, or managed Kubernetes — none are needed, each can consume your $50
-budget in days, and an exhausted budget deactivates the lab. See [projects.md](supplemental/projects.md).
+budget in days, and an exhausted budget deactivates the lab. See [projects.md](https://aise-stthomas.github.io/projects).
 
 ---
 
