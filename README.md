@@ -39,11 +39,11 @@ The full policies are in the [syllabus](syllabus.md).
 
 ## Schedule
 
-Links appear as material is released. Remaining dates will be filled in as the semester proceeds. Reading is assigned at the end of each block for the next one, as on the closing slide; the [syllabus](syllabus.md) lists the same readings by the week they are discussed. Background for the first block, read before or after it: Sculley et al., *Hidden Technical Debt in ML Systems*; Zinkevich, *Rules of Machine Learning*.
+Links appear as material is released. Remaining dates will be filled in as the semester proceeds. Reading is assigned at the end of each block for the next one, as on the closing slide; the [syllabus](syllabus.md) lists the same readings by the week they are discussed. Background for the first block, read before or after it: Zinkevich, *Rules of Machine Learning*.
 
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Kaestner, *Machine Learning in Production*, risk chapters; NIST AI RMF core (skim) | Scaffold running end to end. P1 assigned. |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | Scaffold running end to end. P1 assigned. |
 | 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | |
 | 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | |
 | 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | P1 due. P2 assigned. |

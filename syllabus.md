@@ -187,7 +187,7 @@ system so that outcome is survivable."*
 **Lab:** Hazard analysis on the scaffold; produce the mitigation table. (You will reuse
 it in P1's blind-spot register.)
 
-**Reading:** Book Ch. 3–4 · Kaestner, *Machine Learning in Production* (risk chapters);
+**Reading:** Book Ch. 3–4 · Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*;
 NIST AI RMF core (skim).
 
 ---
