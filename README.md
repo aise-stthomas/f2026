@@ -41,7 +41,7 @@ The full policies are in the [syllabus](syllabus.md).
 
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | Before Week 2: [AWS setup checklist](supplemental/configuring-aws.md). |
 | 2 | Tue, Sep 22 | Requirements, risk, and designing for mistakes | | | | Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | P1 assigned: Measure it. |
 | 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | |
 | 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | P1 due. P2 assigned. |

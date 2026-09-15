@@ -9,11 +9,26 @@ Everything the scaffold deploys uses services with always-free allowances. The $
 safety margin, not a budget to spend. Most students finish the semester having used a
 few dollars of it.
 
-## 1. Before the first block: accept the invitation
+## The checklist: done before Week 2
 
-The instructor creates the lab; you receive an email invitation to AWS Academy before
-the first class. Accept it, create your AWS Academy login, and confirm you can open the
-course and see the lab page. The Week 1 lab assumes this is already done.
+Week 1 needs none of this. Do it in the week between the first and second blocks, in
+order; each step is explained in the sections below. Budget about an hour.
+
+- [ ] Accept the AWS Academy invitation and log in to the lab page (§1)
+- [ ] Start a session; open the console; confirm the region is `us-east-1` (§2, §3)
+- [ ] Paste the session credentials and run `aws sts get-caller-identity` (§3)
+- [ ] Create the `usage-alarms` SNS topic, subscribe your email, **confirm the subscription** (§4)
+- [ ] Create the four warn alarms and the four stop alarms from the table (§4)
+- [ ] Screenshot the CloudWatch alarms list; you will be asked for it (§4)
+- [ ] Read the rules once (§5)
+- [ ] Install your development environment and run the version check (§6)
+- [ ] Put your Gemini key in a `.env` file, never in a commit (§6)
+
+## 1. Accept the invitation
+
+The instructor creates the lab; you receive an email invitation to AWS Academy in the
+first week. Accept it, create your AWS Academy login, and confirm you can open the
+course and see the lab page. Week 2 assumes this is already done.
 
 ## 2. Starting a session
 
@@ -62,9 +77,9 @@ Three things that will otherwise cost you an evening:
 ## 4. Set the usage alarms first
 
 Cost per request is a requirement in this course, and a Learner Lab with no alarms has
-no signal until the budget is gone, and the lab with it. You configure the alarms in
-the Week 1 lab, before anything is deployed, and keep the screenshot; the homework
-asks for it.
+no signal until the budget is gone, and the lab with it. You configure the alarms
+before Week 2, before anything is deployed, and keep the screenshot; you will be asked
+for it.
 
 **Why usage, not dollars.** Billing metrics and the billing console are not exposed
 inside Learner Lab. The only thing you can alarm on is the usage that drives cost:
