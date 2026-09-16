@@ -1,8 +1,10 @@
 # Week 1 — Design Studio
 ## "Design a system that flags fraudulent transactions."
 
+**The problem.** You are Visa and want to build a system that flags when a fraudulent credit card transaction happens. What is that system?
+
 **Scope only.** Step 1 of the framework — scope and requirements — and the first half of
-step 2, framing the AI task. No boxes. No models. No architecture. 
+step 2, framing the AI task. No boxes. No models. No architecture.
 
 **Format.** Build in pairs — sketch it on one page, argue, merge into one sketch. Then
 we review as a group. The answers document is handed out after.
