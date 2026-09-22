@@ -38,17 +38,17 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*; Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*; NIST AI RMF core (skim) | Before Week 2: [AWS setup checklist](supplemental/configuring-aws.md). |
-| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) | [Start Project 1: your first harness](https://github.com/aise-stthomas/measure-it) | Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640)); Huyen, *Designing ML Systems*, architecture chapters; Dean & Barroso, *The Tail at Scale* | P1 assigned: Measure it. |
-| 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*; Breck et al., *The ML Test Score* | |
-| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*; D'Amour et al., *Underspecification* | P1 due. P2 assigned. |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*<br>Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*<br>NIST AI RMF core (skim) | Before Week 2: [AWS setup checklist](supplemental/configuring-aws.md). |
+| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) | [Start Project 1: your first harness](https://github.com/aise-stthomas/measure-it) | Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640))<br>Huyen, *Designing ML Systems*, architecture chapters<br>Dean & Barroso, *The Tail at Scale* | P1 assigned: Measure it. |
+| 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*<br>Breck et al., *The ML Test Score* | |
+| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*<br>D'Amour et al., *Underspecification* | P1 due. P2 assigned. |
 | 5 | | Evaluation I: offline | | | | Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected) | |
 | 6 | | Evaluation II: online, and shipping a change | | | | Google SRE Book: handling overload, cascading failures | |
 | 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | | P2 due. |
-| 8 | | Checkpoint exam and project clinic | | | | Anthropic, *Building Effective Agents*; a provider's tool-use API, read as a wire format | P3 assigned. |
+| 8 | | Checkpoint exam and project clinic | | | | Anthropic, *Building Effective Agents*<br>a provider's tool-use API, read as a wire format | P3 assigned. |
 | 9 | | Agents I: the mechanism | | | | | |
 | 10 | | Agents II: state, orchestration, and delegation | | | | The capability-protocol specification the scaffold uses, read as a primary source | |
-| 11 | | The integration and trust layer | | | | Willison on prompt injection and the lethal trifecta; OWASP Top 10 for LLM Applications | P3 due. P4 assigned. |
+| 11 | | The integration and trust layer | | | | Willison on prompt injection and the lethal trifecta<br>OWASP Top 10 for LLM Applications | P3 due. P4 assigned. |
 | 12 | | Security and safety for agentic systems | | | | | |
 | 13 | | Operating a live AI system | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
