@@ -23,9 +23,6 @@ because there is a model in the loop?*
 **Who it is for.** Working professionals in a master's program. Prerequisites:
 comfortable Python, the command line, you have trained or called a model, you can read
 an HTTP API. No cloud, container, or distributed-systems background required.
-**Workload cap:** five hours a week outside class. **Cost to you:** nothing; projects
-run on a course-provided AWS Academy Learner Lab account and the Gemini free tier.
-The full policies are in the [syllabus](syllabus.md).
 
 ## How a week works
 
