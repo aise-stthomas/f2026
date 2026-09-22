@@ -4,7 +4,7 @@
 **Instructor:** Jim Howard · **Format:** one 3-hour block per week, hybrid, 14 weeks ·
 **Day, time, and room:** to be announced
 
-[Schedule](#schedule) · [Syllabus](syllabus.md) · [Supplemental material](supplemental/) ·
+[Schedule](#schedule) · [Reading](#reading) · [Syllabus](syllabus.md) · [Supplemental material](supplemental/) ·
 [Course site](https://aise-stthomas.github.io/) · [GitHub](https://github.com/aise-stthomas)
 
 ---
@@ -36,22 +36,79 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 
 ## Schedule
 
-| Wk | Date | Topic | Slides | Design studio | Lab | Reading for next week | Project |
+| Wk | Date | Topic | Slides | Design studio | Lab | Reading | Project |
 |---|---|---|---|---|---|---|---|
-| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | Sculley et al., *Hidden Technical Debt in Machine Learning Systems*<br>Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*<br>NIST AI RMF core (skim) | Before Week 2: [AWS setup checklist](supplemental/configuring-aws.md). |
-| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) | [Start Project 1: your first harness](https://github.com/aise-stthomas/measure-it) | Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640))<br>Huyen, *Designing ML Systems*, architecture chapters<br>Dean & Barroso, *The Tail at Scale* | P1 assigned: Measure it. |
-| 3 | | Architecture and the trade space | | | | Sambasivan et al., *Data Cascades*<br>Breck et al., *The ML Test Score* | |
-| 4 | | Data as specification, and retrieval | | | | Ribeiro et al., *CheckList*<br>D'Amour et al., *Underspecification* | P1 due. P2 assigned. |
-| 5 | | Evaluation I: offline | | | | Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected) | |
-| 6 | | Evaluation II: online, and shipping a change | | | | Google SRE Book: handling overload, cascading failures | |
+| 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | [reading](#reading-week-1) | Before Week 2: [AWS setup checklist](supplemental/configuring-aws.md). |
+| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) | [Start Project 1: your first harness](https://github.com/aise-stthomas/measure-it) | [reading](#reading-week-2) | P1 assigned: Measure it. |
+| 3 | | Architecture and the trade space | | | | [reading](#reading-week-3) | |
+| 4 | | Data as specification, and retrieval | | | | [reading](#reading-week-4) | P1 due. P2 assigned. |
+| 5 | | Evaluation I: offline | | | | [reading](#reading-week-5) | |
+| 6 | | Evaluation II: online, and shipping a change | | | | [reading](#reading-week-6) | |
 | 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | | P2 due. |
-| 8 | | Checkpoint exam and project clinic | | | | Anthropic, *Building Effective Agents*<br>a provider's tool-use API, read as a wire format | P3 assigned. |
+| 8 | | Checkpoint exam and project clinic | | | | [reading](#reading-week-8) | P3 assigned. |
 | 9 | | Agents I: the mechanism | | | | | |
-| 10 | | Agents II: state, orchestration, and delegation | | | | The capability-protocol specification the scaffold uses, read as a primary source | |
-| 11 | | The integration and trust layer | | | | Willison on prompt injection and the lethal trifecta<br>OWASP Top 10 for LLM Applications | P3 due. P4 assigned. |
+| 10 | | Agents II: state, orchestration, and delegation | | | | [reading](#reading-week-10) | |
+| 11 | | The integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
 | 12 | | Security and safety for agentic systems | | | | | |
 | 13 | | Operating a live AI system | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
+
+## Reading
+
+Assigned at the end of each block, for the following week.
+
+### Week 1 — Why AI systems fail differently
+{: #reading-week-1 }
+
+- Sculley et al., *Hidden Technical Debt in Machine Learning Systems*
+- Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*
+- NIST AI RMF core (skim)
+
+### Week 2 — Requirements, and measuring AI systems
+{: #reading-week-2 }
+
+- Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640))
+- Huyen, *Designing ML Systems*, architecture chapters
+- Dean & Barroso, *The Tail at Scale*
+
+### Week 3 — Architecture and the trade space
+{: #reading-week-3 }
+
+- Sambasivan et al., *Data Cascades*
+- Breck et al., *The ML Test Score*
+
+### Week 4 — Data as specification, and retrieval
+{: #reading-week-4 }
+
+- Ribeiro et al., *CheckList*
+- D'Amour et al., *Underspecification*
+
+### Week 5 — Evaluation I: offline
+{: #reading-week-5 }
+
+- Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected)
+
+### Week 6 — Evaluation II: online, and shipping a change
+{: #reading-week-6 }
+
+- Google SRE Book: handling overload, cascading failures
+
+### Week 8 — Checkpoint exam and project clinic
+{: #reading-week-8 }
+
+- Anthropic, *Building Effective Agents*
+- a provider's tool-use API, read as a wire format
+
+### Week 10 — Agents II: state, orchestration, and delegation
+{: #reading-week-10 }
+
+- The capability-protocol specification the scaffold uses, read as a primary source
+
+### Week 11 — The integration and trust layer
+{: #reading-week-11 }
+
+- Willison on prompt injection and the lethal trifecta
+- OWASP Top 10 for LLM Applications
 
 ## Supplemental material
 
