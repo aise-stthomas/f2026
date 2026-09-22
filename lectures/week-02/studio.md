@@ -1,17 +1,22 @@
 # Week 2 — Design Studio
-## "A résumé screening system rejects a qualified candidate. Redesign the system so that outcome is survivable."
+## "A résumé screening system rejected a qualified candidate. Write the requirements it should have had, and design the measurement that would have told you."
 
 **The category is real.** Amazon built a résumé screener in the mid-2010s and scrapped
 it after discovering it had learned to penalize résumés containing the word
-"women's." Under the EU AI Act, employment screening is *high-risk* — so human
-oversight, logging, and the ability to contest a decision are requirements, not
-preferences.
+"women's."
 
 **Format.** Build in pairs — one page, argue, merge. Then we review as a group. The
 answers document is handed out after.
 
-**Use tonight's vocabulary.** Requirements as rate × slice × remainder × owner. The
-mistake catalog. Mitigations *with their failure modes*. Recourse.
+**Two halves, one page.**
 
-**A rule for this one.** You may not answer with "make the model more accurate." The
-model will be wrong at some rate, forever. Redesign for the remainder.
+1. **The requirements.** Three to five of them, each as a rate, on a slice, with a
+   remainder policy and an owner. At least one slice should be a group the model cannot
+   see directly.
+2. **The measurement.** For each requirement: where do the résumés with a known right
+   answer come from, and who decides what "qualified" means? How many do you need on
+   that slice before the number means anything? What would you run, and what would the
+   report look like?
+
+**A rule for this one.** You may not answer with "make the model more accurate." More
+accurate than what, on whom, measured how?
