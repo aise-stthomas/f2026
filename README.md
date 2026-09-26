@@ -39,7 +39,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | Wk | Date | Topic | Slides | Design studio | Lab | Reading | Project |
 |---|---|---|---|---|---|---|---|
 | 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | [reading](#reading-week-1) | [AWS setup](supplemental/configuring-aws.md) |
-| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) | [Can you tell a change from a wobble?](https://github.com/aise-stthomas/measure-it/blob/main/LAB.md) | [reading](#reading-week-2) | P1 assigned: Measure it. |
+| 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) · [answers](lectures/week-02/studio-answers.pdf) | [Can you tell a change from a wobble?](https://github.com/aise-stthomas/measure-it/blob/main/LAB.md) | [reading](#reading-week-2) | P1 assigned: Measure it. |
 | 3 | | Architecture and the trade space | | | | [reading](#reading-week-3) | |
 | 4 | | Data as specification, and retrieval | | | | [reading](#reading-week-4) | P1 due. P2 assigned. |
 | 5 | | Evaluation I: offline | | | | [reading](#reading-week-5) | |
