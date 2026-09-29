@@ -120,16 +120,18 @@ Assigned at the end of each block, for the following week.
 
 ## Projects
 
-Four cumulative pair projects on one scaffolded system, about twelve hours each. Each
+Four cumulative pair projects. The first measures one model call; the scaffolded system
+arrives with the second, and each project after that replaces one part of it. Each
 ships with the reference solution to the previous one. Specifications are in the
-[projects document](https://aise-stthomas.github.io/projects) on the course site.
+[projects document](https://aise-stthomas.github.io/projects) on the course site; each
+project's own repository holds its `PROJECT.md`, which is the source of truth.
 
-| Project | Assigned | Due | You replace or add |
+| Project | Assigned | Due | What you build |
 |---|---|---|---|
-| P1 — Measure it | Wk 2 | Wk 4 | Eval harness: golden set, slices, noise floor, validated judge, blind-spot register |
-| P2 — Ship it | Wk 4 | Wk 7 | Eval gate in CI, canary with kill switch, cost model, telemetry |
+| [P1 — Measure it](https://github.com/aise-stthomas/measure-it) | Wk 2 | Wk 4 | An evaluation harness for the triage step: a golden set with slices, scorers, a judge you validated, the noise floor, one question answered with evidence, and the blind-spot register |
+| P2 — Ship it | Wk 4 | Wk 7 | The harness as a release gate in CI, a canary with a kill switch, a cost model, telemetry |
 | P3 — Make it act | Wk 8 | Wk 11 | Your own agent loop and orchestrator over the capability server |
-| P4 — Break it, run it | Wk 11 | Wk 13 | Hardening after the red team, SLOs, tracing, game-day postmortem |
+| P4 — Break it, run it | Wk 11 | Wk 13 | Hardening after the red team, SLOs, tracing, the game-day postmortem |
 
 ## Assessment
 
