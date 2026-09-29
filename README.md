@@ -117,6 +117,7 @@ Assigned at the end of each block, for the following week.
 | [Course thesis](supplemental/course-thesis.md) | What is different about AI systems, and the gate every topic must pass. |
 | [Common system components](supplemental/common-system-components.md) | A one-page vocabulary for AI system designs. |
 | [Configuring AWS](supplemental/configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
+| [Serverless functions](supplemental/serverless-functions.pdf) | A short primer: what a function is, why a model call lives in one, cold and warm, the time limit, quotas, cost. |
 
 ## Projects
 
