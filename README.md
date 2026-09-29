@@ -40,7 +40,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 |---|---|---|---|---|---|---|---|
 | 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | [reading](#reading-week-1) | [AWS setup](supplemental/configuring-aws.md) |
 | 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) · [answers](lectures/week-02/studio-answers.pdf) | [Can you tell a change from a wobble?](https://github.com/aise-stthomas/measure-it/blob/main/LAB.md) | [reading](#reading-week-2) | P1 assigned: Measure it. |
-| 3 | | Architecture and the trade space | | | | [reading](#reading-week-3) | |
+| 3 | Tue, Sep 29 | Comparing versions, and architecture | [slides](lectures/week-03/slides.pdf) | [Design the support desk](lectures/week-03/studio.pdf) | [Put the model behind a URL](https://github.com/aise-stthomas/put-the-model-behind-a-url/blob/main/LAB.md) | [reading](#reading-week-3) | P1 continues. |
 | 4 | | Data as specification, and retrieval | | | | [reading](#reading-week-4) | P1 due. P2 assigned. |
 | 5 | | Evaluation I: offline | | | | [reading](#reading-week-5) | |
 | 6 | | Evaluation II: online, and shipping a change | | | | [reading](#reading-week-6) | |
@@ -71,7 +71,7 @@ Assigned at the end of each block, for the following week.
 - Huyen, *Designing ML Systems*, architecture chapters
 - Dean & Barroso, *The Tail at Scale*
 
-### Week 3 — Architecture and the trade space
+### Week 3 — Comparing versions, and architecture
 {: #reading-week-3 }
 
 - Sambasivan et al., *Data Cascades*

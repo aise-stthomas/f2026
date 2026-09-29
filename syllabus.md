@@ -188,29 +188,43 @@ NIST AI RMF core (skim).
 
 ---
 
-### Week 3 — Architecture and the trade space
-**Framework: step 5**
+### Week 3 — Comparing versions, and architecture, part 1
+**Framework: step 3, continued; step 5**
 
-*What's different:* Inference is slow, expensive, and capacity-constrained in ways that
-make "where does the model live" the dominant architectural decision.
+*What's different:* every change to an AI system is a comparison between two
+stochastic measurements, and the scorer is often a model itself. And inference is slow,
+expensive, and capacity-constrained in ways that make "where does the model live" the
+dominant architectural decision.
 
-- Where the model lives: precompute, online sync, streaming, async, on-device
-- The trade space: latency vs quality vs cost vs freshness
-- Decomposition; the model as a service boundary; the pipeline jungle
-- **The cascade: candidate generation → ranking → re-ranking.** Why it exists (cost).
-  **This is the same architecture as your RAG pipeline** — learn it once.
-- **The determinism boundary** — deciding, deliberately, what the model is allowed to
-  decide. The best agent is often the one you replaced with a state machine.
-- Adapt, prompt, or retrieve? — as an architectural decision with maintenance cost
-- Capacity and unit-economics reasoning; cost per request as a requirement
-- Build vs buy; vendor and model lock-in
+**Measuring AI systems, part 2 (step 3, continued)**
 
-**Design Studio:** *"Design Reels ranking."* The canonical interview prompt.
+- Comparing two versions: paired differences; why the interval belongs to the unit you
+  sampled; "cannot tell" as a result
+- The smallest difference a suite can detect; sizing a slice before the experiment;
+  multiple comparisons; the regression gate that replaces "tests pass"
+- Judging the judges: a rater as an instrument, reliability before validity; agreement
+  measures (percent, Cohen's κ, Fleiss' κ, Krippendorff's α, ICC); validity by kind of
+  output, including tone and style with no ground truth; correcting a lenient judge's
+  rate; where to spend human labels
 
-**Lab:** Back-of-envelope capacity and cost model for the Operator at 1M tickets/month;
-find the dominant term. Structured peer review of a partner's model.
+**Architecture, part 1 (step 5)**
 
-**Reading:** Book Ch. 8–10 · Huyen, *Designing ML Systems*, architecture chapters;
+- Where the model lives: precompute, online sync, streaming, async, on-device; the cost,
+  latency and capacity arithmetic; tail latency with a model in the loop; the failure
+  path; the trade space
+- **The determinism boundary**: what the model is allowed to decide, where correctness
+  lives, where knowledge lives; the build as one versioned manifest; build or rent
+- **The cascade**: candidate generation → ranking → selection, why it exists (cost),
+  one architecture with many names, the recall ceiling
+
+**Design Studio:** *Design the support desk.* The ticket system with two models: a
+black-box classifier and the language-model triage step; the architecture, the tables,
+sync and async per hop, the failure path.
+
+**Lab:** *Put the model behind a URL.* The triage step deployed as a function with a URL
+in the Learner Lab; cold start, warm latency, and what a time limit does.
+
+**Reading:** Book Ch. 8–10, 14–15 · Huyen, *Designing ML Systems*, architecture chapters;
 Dean & Barroso, *The Tail at Scale*.
 
 ---
