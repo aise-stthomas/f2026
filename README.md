@@ -68,7 +68,7 @@ Assigned at the end of each block, for the following week.
 {: #reading-week-2 }
 
 - Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640))
-- Huyen, *Designing ML Systems*, architecture chapters
+- Huyen, *Designing Machine Learning Systems*, Ch. 7 *Model Deployment and Prediction Service*
 - Dean & Barroso, *The Tail at Scale*
 
 ### Week 3 — Comparing versions, and architecture

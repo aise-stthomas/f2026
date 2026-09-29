@@ -224,8 +224,8 @@ sync and async per hop, the failure path.
 **Lab:** *Put the model behind a URL.* The triage step deployed as a function with a URL
 in the Learner Lab; cold start, warm latency, and what a time limit does.
 
-**Reading:** Book Ch. 8–10, 14–15 · Huyen, *Designing ML Systems*, architecture chapters;
-Dean & Barroso, *The Tail at Scale*.
+**Reading:** Book Ch. 8–10, 14–15 · Huyen, *Designing Machine Learning Systems*, Ch. 7 *Model
+Deployment and Prediction Service*; Dean & Barroso, *The Tail at Scale*.
 
 ---
 
