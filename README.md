@@ -41,15 +41,15 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 1 | Tue, Sep 15 | Why AI systems fail differently | [slides](lectures/week-01/slides.pdf) | [Design a system that flags fraudulent transactions](lectures/week-01/studio.pdf) · [answers](lectures/week-01/studio-answers.pdf) | [Feel the distribution](https://github.com/aise-stthomas/feel-the-distribution) | [reading](#reading-week-1) | [AWS setup](supplemental/configuring-aws.md) |
 | 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) · [answers](lectures/week-02/studio-answers.pdf) | [Can you tell a change from a wobble?](https://github.com/aise-stthomas/measure-it/blob/main/LAB.md) | [reading](#reading-week-2) | P1 assigned: Measure it. |
 | 3 | Tue, Sep 29 | Comparing versions, and architecture | [slides](lectures/week-03/slides.pdf) | [Design the support desk](lectures/week-03/studio.pdf) | [Put the model behind a URL](https://github.com/aise-stthomas/put-the-model-behind-a-url/blob/main/LAB.md) | [reading](#reading-week-3) | P1 continues. |
-| 4 | | Data as specification, and retrieval | | | | [reading](#reading-week-4) | P1 due. P2 assigned. |
-| 5 | | Evaluation I: offline | | | | [reading](#reading-week-5) | |
-| 6 | | Evaluation II: online, and shipping a change | | | | [reading](#reading-week-6) | |
-| 7 | | Serving, inference economics, and scheduling on scarce capacity | | | | | P2 due. |
+| 4 | Tue, Oct 6 | How you build a scoring system | [slides](lectures/week-04/slides.pdf) | [Design the delivery-time estimate](lectures/week-04/studio.pdf) | [Score every account, nightly and at the request](https://github.com/aise-stthomas/score-every-account/blob/main/LAB.md) | [reading](#reading-week-4) | P1 due. P2 assigned. |
+| 5 | | How you build a retrieval-grounded assistant | | | | [reading](#reading-week-5) | |
+| 6 | | How you build a ranking system | | | | [reading](#reading-week-6) | |
+| 7 | | How you build a generation service at volume | | | | | P2 due. |
 | 8 | | Checkpoint exam and project clinic | | | | [reading](#reading-week-8) | P3 assigned. |
-| 9 | | Agents I: the mechanism | | | | | |
-| 10 | | Agents II: state, orchestration, and delegation | | | | [reading](#reading-week-10) | |
-| 11 | | The integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
-| 12 | | Security and safety for agentic systems | | | | | |
+| 9 | | How you build an agentic chatbot, part 1: the loop | | | | | |
+| 10 | | How you build an agentic chatbot, part 2: state and orchestration | | | | [reading](#reading-week-10) | |
+| 11 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
+| 12 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-12) | |
 | 13 | | Operating a live AI system | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
 
@@ -77,18 +77,20 @@ Assigned at the end of each block, for the following week.
 - Sambasivan et al., *Data Cascades*
 - Breck et al., *The ML Test Score*
 
-### Week 4 — Data as specification, and retrieval
+### Week 4 — How you build a scoring system
 {: #reading-week-4 }
 
-- Ribeiro et al., *CheckList*
-- D'Amour et al., *Underspecification*
+- Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*, §1–3 ([arXiv 2005.11401](https://arxiv.org/abs/2005.11401))
+- Manning, Raghavan & Schütze, *Introduction to Information Retrieval*, Ch. 1 and §6.2 ([free online](https://nlp.stanford.edu/IR-book/))
+- Zheng et al., *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*, §1–3 ([arXiv 2306.05685](https://arxiv.org/abs/2306.05685))
 
-### Week 5 — Evaluation I: offline
+### Week 5 — How you build a retrieval-grounded assistant
 {: #reading-week-5 }
 
+- Covington, Adams & Sargin, *Deep Neural Networks for YouTube Recommendations* (RecSys 2016)
 - Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected)
 
-### Week 6 — Evaluation II: online, and shipping a change
+### Week 6 — How you build a ranking system
 {: #reading-week-6 }
 
 - Google SRE Book: handling overload, cascading failures
@@ -99,16 +101,21 @@ Assigned at the end of each block, for the following week.
 - Anthropic, *Building Effective Agents*
 - a provider's tool-use API, read as a wire format
 
-### Week 10 — Agents II: state, orchestration, and delegation
+### Week 10 — How you build an agentic chatbot, part 2: state and orchestration
 {: #reading-week-10 }
 
 - The capability-protocol specification the scaffold uses, read as a primary source
 
-### Week 11 — The integration and trust layer
+### Week 11 — The agentic chatbot with a second vendor
 {: #reading-week-11 }
 
 - Willison on prompt injection and the lethal trifecta
 - OWASP Top 10 for LLM Applications
+
+### Week 12 — The agentic chatbot under attack
+{: #reading-week-12 }
+
+- Google SRE Book, *Monitoring Distributed Systems*
 
 ## Supplemental material
 
@@ -118,6 +125,7 @@ Assigned at the end of each block, for the following week.
 | [Common system components](supplemental/common-system-components.md) | A one-page vocabulary for AI system designs. |
 | [Configuring AWS](supplemental/configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 | [Serverless functions](supplemental/serverless-functions.pdf) | A short primer: what a function is, why a model call lives in one, cold and warm, the time limit, quotas, cost. |
+| [EventBridge](supplemental/eventbridge.pdf) | A one-page primer: a clock, a target and an input, and what we use it for. |
 
 ## Projects
 
