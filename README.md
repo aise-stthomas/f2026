@@ -44,76 +44,82 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 4 | Tue, Oct 6 | How you build a scoring system | [slides](lectures/week-04/slides.pdf) | [Design the delivery-time estimate](lectures/week-04/studio.pdf) | [Score every account, nightly and at the request](https://github.com/aise-stthomas/score-every-account/blob/main/LAB.md) | [reading](#reading-week-4) | P1 due. P2 assigned. |
 | 5 | | How you build a retrieval-grounded assistant | | | | [reading](#reading-week-5) | |
 | 6 | | How you build a ranking system | | | | [reading](#reading-week-6) | |
-| 7 | | How you build a generation service at volume | | | | | P2 due. |
-| 8 | | Checkpoint exam and project clinic | | | | [reading](#reading-week-8) | P3 assigned. |
-| 9 | | How you build an agentic chatbot, part 1: the loop | | | | | |
-| 10 | | How you build an agentic chatbot, part 2: state and orchestration | | | | [reading](#reading-week-10) | |
+| 7 | | How you build a generation service at volume | | | | [reading](#reading-week-7) | P2 due. |
+| 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
+| 9 | | How you build an agentic chatbot, part 1: the loop | | | | [reading](#reading-week-9) | |
+| 10 | | How you build an agentic chatbot, part 2: state and orchestration | | | | | |
 | 11 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
 | 12 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-12) | |
-| 13 | | Operating a live AI system | | | | | P4 due. Repository tagged. |
+| 13 | | Operating a live AI system | | | | [reading](#reading-week-13) | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
 
 ## Reading
 
-Assigned at the end of each block, for the following week.
+Read before the session of the week listed. Each list is assigned at the end of the block
+before it. The course book's chapters are listed in the syllabus.
 
 ### Week 1 — Why AI systems fail differently
 {: #reading-week-1 }
 
 - Sculley et al., *Hidden Technical Debt in Machine Learning Systems*
-- Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*
-- NIST AI RMF core (skim)
+- Zinkevich, *Rules of Machine Learning*
 
 ### Week 2 — Requirements, and measuring AI systems
 {: #reading-week-2 }
+
+- Kaestner, *Machine Learning in Production*, Ch. 6 *Gathering Requirements*, Ch. 7 *Planning for Mistakes*, Ch. 27 *Safety*
+- NIST AI RMF core (skim)
+
+### Week 3 — Comparing versions, and architecture
+{: #reading-week-3 }
 
 - Miller, *Adding Error Bars to Evals* ([arXiv 2411.00640](https://arxiv.org/abs/2411.00640))
 - Huyen, *Designing Machine Learning Systems*, Ch. 7 *Model Deployment and Prediction Service*
 - Dean & Barroso, *The Tail at Scale*
 
-### Week 3 — Comparing versions, and architecture
-{: #reading-week-3 }
-
-- Sambasivan et al., *Data Cascades*
-- Breck et al., *The ML Test Score*
-
 ### Week 4 — How you build a scoring system
 {: #reading-week-4 }
+
+- Sambasivan et al., *Everyone wants to do the model work, not the data work: Data Cascades in High-Stakes AI* (2021)
+- Breck et al., *The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction* (2017)
+
+### Week 5 — How you build a retrieval-grounded assistant
+{: #reading-week-5 }
 
 - Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*, §1–3 ([arXiv 2005.11401](https://arxiv.org/abs/2005.11401))
 - Manning, Raghavan & Schütze, *Introduction to Information Retrieval*, Ch. 1 and §6.2 ([free online](https://nlp.stanford.edu/IR-book/))
 - Zheng et al., *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*, §1–3 ([arXiv 2306.05685](https://arxiv.org/abs/2306.05685))
 
-### Week 5 — How you build a retrieval-grounded assistant
-{: #reading-week-5 }
+### Week 6 — How you build a ranking system
+{: #reading-week-6 }
 
 - Covington, Adams & Sargin, *Deep Neural Networks for YouTube Recommendations* (RecSys 2016)
 - Kohavi, Tang & Xu, *Trustworthy Online Controlled Experiments* (selected)
 
-### Week 6 — How you build a ranking system
-{: #reading-week-6 }
+### Week 7 — How you build a generation service at volume
+{: #reading-week-7 }
 
 - Google SRE Book: handling overload, cascading failures
 
-### Week 8 — Checkpoint exam and project clinic
-{: #reading-week-8 }
+### Week 9 — How you build an agentic chatbot, part 1: the loop
+{: #reading-week-9 }
 
 - Anthropic, *Building Effective Agents*
 - a provider's tool-use API, read as a wire format
 
-### Week 10 — How you build an agentic chatbot, part 2: state and orchestration
-{: #reading-week-10 }
+### Week 11 — The agentic chatbot with a second vendor
+{: #reading-week-11 }
 
 - The capability-protocol specification the scaffold uses, read as a primary source
 
-### Week 11 — The agentic chatbot with a second vendor
-{: #reading-week-11 }
+### Week 12 — The agentic chatbot under attack
+{: #reading-week-12 }
 
 - Willison on prompt injection and the lethal trifecta
 - OWASP Top 10 for LLM Applications
 
-### Week 12 — The agentic chatbot under attack
-{: #reading-week-12 }
+### Week 13 — Operating a live AI system
+{: #reading-week-13 }
 
 - Google SRE Book, *Monitoring Distributed Systems*
 

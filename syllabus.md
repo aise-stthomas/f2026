@@ -224,8 +224,9 @@ sync and async per hop, the failure path.
 **Lab:** *Put the model behind a URL.* The triage step deployed as a function with a URL
 in the Learner Lab; cold start, warm latency, and what a time limit does.
 
-**Reading:** Book Ch. 8–10, 14–15 · Huyen, *Designing Machine Learning Systems*, Ch. 7 *Model
-Deployment and Prediction Service*; Dean & Barroso, *The Tail at Scale*.
+**Reading:** Book Ch. 8–10, 14–15 · Miller, *Adding Error Bars to Evals*;
+Huyen, *Designing Machine Learning Systems*, Ch. 7 *Model Deployment and Prediction
+Service*; Dean & Barroso, *The Tail at Scale*.
 
 ---
 
@@ -413,7 +414,8 @@ read as a wire format.
   *Introduced: labelling trajectories.*
 
 **Design Studio:** peer mock interviews on the full agent design. **Lab:** *Scoped
-token.* **Reading:** Book Ch. 25, 27. **Project: P3 due. P4 assigned.**
+token.* **Reading:** Book Ch. 25, 27 · the capability-protocol specification the scaffold
+uses, read as a primary source. **Project: P3 due. P4 assigned.**
 
 ---
 
@@ -432,7 +434,8 @@ token.* **Reading:** Book Ch. 25, 27. **Project: P3 due. P4 assigned.**
   *Introduced: red-team measurement.*
 
 **Design Studio:** system audit of the Week 11 designs. **Lab:** *Red team.* **Reading:**
-Book Ch. 32, 33.
+Book Ch. 32, 33 · Willison, prompt injection and the lethal trifecta; OWASP Top 10 for
+LLM Applications.
 
 ---
 
