@@ -10,4 +10,4 @@ are on the [course site](https://aise-stthomas.github.io/).
 | [Common system components](common-system-components.md) | A one-page vocabulary for the parts that appear in AI system designs. |
 | [Configuring AWS](configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 | [Serverless functions](serverless-functions.pdf) | A short primer: what a function is, why a model call lives in one, cold and warm, the time limit, quotas, cost. |
-| [Scheduled rules](scheduled-rules.pdf) | A short primer: a calendar rule and a function, how one firing runs, what retries do to your node, and where an orchestrator begins. |
+| [EventBridge](eventbridge.pdf) | A one-page primer: a clock, a target and an input, and what we use it for. |
