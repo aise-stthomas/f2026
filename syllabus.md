@@ -80,10 +80,10 @@ for each step are published in [rubric.md](https://aise-stthomas.github.io/rubri
 |---|---|---|
 | 1 | **Scope & requirements** — users, decisions, functional/nonfunctional, scale, latency budget, cost budget | Week 2 |
 | 2 | **Frame the AI task** — what decision the model makes, the I/O contract, whether it should be a model at all | Week 2 |
-| 3 | **Metrics** — business metric → online proxy → offline metric, plus guardrails | Weeks 5–6 |
+| 3 | **Metrics** — business metric → online proxy → offline metric, plus guardrails | Weeks 2–3, 6 |
 | 4 | **Data** — sources, labels, freshness, privacy, feedback loop | Week 4 |
-| 5 | **High-level architecture** — components, data flow, where the model lives, sync vs async | Week 3 |
-| 6 | **Deep dive** — retrieval and ranking, the agent loop, the integration layer | Weeks 7, 9–11 |
+| 5 | **High-level architecture** — components, data flow, where the model lives, sync vs async | Weeks 3–7, one archetype a week |
+| 6 | **Deep dive** — retrieval and ranking, the agent loop, the integration layer | Weeks 5–7, 9–11 |
 | 7 | **Failure, scale & operations** — what breaks, monitoring, drift, rollout, cost at scale | Weeks 12–13 |
 
 ## Weekly structure
@@ -229,157 +229,109 @@ Deployment and Prediction Service*; Dean & Barroso, *The Tail at Scale*.
 
 ---
 
-### Week 4 — Data as specification, and retrieval
-**Framework: step 4** · *Retrieval archetype*
+> **From Week 4 the schedule is organized by kind of system.** Each week takes one
+> system and asks the same three questions: **how is it built** (the architecture),
+> **how is its data handled**, and **how is it measured**. The model is treated as a
+> black box with a contract and a datasheet; the course builds everything around it.
+> Tools are introduced the week a system first needs them. The seven-step framework
+> remains the rubric for studios and exams. The studio each week is a fresh design of
+> that week's kind of system; the lab builds one piece of it.
 
-*What's different:* The specification lives in data — a data defect and a code defect
-are the same class of problem, and only one shows up in a diff. And the model's knowledge
-is frozen; retrieval is how the right knowledge reaches it, and retrieval quality, not
-model quality, is usually the bottleneck.
+### Week 4 — How you build a scoring system
+*The churn score: one model, a number for every account, before anyone asks and the moment someone does.*
 
-**Data as specification (30 min)**
+- **How it is built:** the batch scorer (a DAG with a model in one node; the
+  scheduler, the run id, the check, publishing by pointer; cadence as the dial) and the
+  online scorer (feature assembly from the request plus a precomputed table; the model
+  in process; the threshold as a requirement in a table; the serving log); where the
+  two meet. *Introduced: the scheduler, the feature table, the threshold.*
+- **How its data is handled:** where data lives around a black-box model; the dataset
+  you trained on versus the one you will have; the ways to get data; building the
+  dataset as a component (source inventory, instrumentation and the wait, the join and
+  its match rate, who may see production data); the tables of an AI system (inference,
+  features, labels, the dataset as a frozen query); the point-in-time join; data as
+  specification. *Introduced: the inference table, point-in-time correctness.*
+- **How it is measured:** precision at *k* on a holdout; recall and precision at the
+  threshold, per slice; p99 of the online score; served = recomputed, exactly; the
+  pipeline's freshness, completeness and share logged. *Introduced: the holdout, the
+  consistency test.*
 
-- Data contracts, schemas, and schema evolution — the interface between producers and
-  consumers
-- **Training/serving skew as a distributed-systems consistency problem** — two code
-  paths computing one transformation, drifting apart. Feature stores as an answer to
-  *that*, not a product category. The prompt-formatting version of the same problem.
-- Privacy, retention, and PII as design constraints that reach back into architecture:
-  what enters the context, what the trace keeps, for how long
-- Validation, lineage, and provenance — briefly; what "version the data" means
-
-**Retrieval, mechanically (25 min)**
-
-- **Embeddings** as a learned map where similarity ≈ relevance — and where that fails:
-  negation, numbers, exact identifiers, synonyms it never saw. The retriever is a model
-  too; property 1 applies.
-- **One approximate-nearest-neighbor algorithm, worked:** random projection trees. A
-  random hyperplane splits the space; nearby points usually land on the same side;
-  recurse to small leaves; search one leaf. A *forest* of trees raises recall at the
-  cost of speed — **index recall is a rate you measure.** The algorithm changes yearly;
-  the idea (partition the space, trade recall for speed, measure the recall) does not.
-  *Self-learn the current one when you need it; primer 8.*
-- **Hybrid (lexical + dense) and rerank** — the cascade from Week 3, again. Lexical
-  catches what dense misses.
-- **The unit of retrieval.** Chunking is representation design: too small loses
-  meaning, too large loses precision. Where most retrieval systems actually fail.
-- **Evaluating retrieval separately from generation:** recall@k against a labeled set,
-  per slice, including the "answer is not in the corpus" slice — before you look at
-  the model's output at all.
-- Freshness and invalidation (corpus and index drift apart); **access control at
-  retrieval time** — the model believes what it is shown and cannot enforce permissions.
-- *Dated sidebar:* "vector database" is a product category, not an architecture; hybrid
-  is the default; most production vector search is a feature of a store you already run.
-
-**Closing (8 min)**
-
-- Feedback loops, previewed: your outputs become tomorrow's inputs; the loop in the
-  Operator. Week 6 owns it.
-- Retraining and re-indexing as a DAG — pointer to Week 13 and primer 7.
-
-**Design Studio — audit format:** *"Here is a running recommendation system's data
-pipeline. Find the three things that will hurt you."* (Skew, staleness, and a feedback
-loop are in there; so are two red herrings.)
-
-**Lab:** Two parts. **(1)** Add contract validation to the scaffold's ticket pipeline,
-break it deliberately, and watch what validation does and does not catch. **(2)** Measure
-recall@5 of the scaffold's runbook retriever on 20 labeled questions; switch it from
-lexical to hybrid and watch recall move; find the question where the right unit exists
-in the corpus but was never retrieved, and say why.
-
-**Reading:** Book Ch. 6, 17 · Sambasivan et al., *Data Cascades*; Breck et al., *The ML
-Test Score*.
-
-**Project: P1 due — Measure it.** **P2 assigned.**
+**Design Studio:** *Design the delivery-time estimate.* **Lab:** *Score every account,
+nightly and at the request.* **Reading:** Book Ch. 6, 8 · Sambasivan et al., *Data
+Cascades*; Breck et al., *The ML Test Score*. **Project: P1 due. P2 assigned.**
 
 ---
 
-### Week 5 — Evaluation I: offline
-**Framework: step 3**
+### Week 5 — How you build a retrieval-grounded assistant
+*An internal question-answering system over a document corpus: the model's knowledge is frozen, and retrieval is how the right knowledge reaches it.*
 
-*What's different:* This is the week the course turns on. A test is boolean and
-deterministic; an eval is a statistic over a sampled suite with a confidence interval.
+- **How it is built:** the indexing path (corpus → chunks → index, offline) and the
+  request path (query → retrieve → assemble context → generate → cite); embeddings as a
+  learned map and where they fail; one approximate-nearest-neighbour algorithm worked;
+  hybrid retrieval and rerank as the cascade again; the unit of retrieval; access control
+  at retrieval time. *Introduced: the index, chunking, hybrid retrieval.*
+- **How its data is handled:** the corpus as a dataset (provenance, freshness,
+  invalidation, permissions); the context as data the model is given; labelling: where
+  labels for text come from, the written rule, agreement, cost per label.
+  *Introduced: labelling as a pipeline.*
+- **How it is measured:** recall@k against a labelled set, per slice, including the
+  "answer is not in the corpus" slice, before looking at generated text; groundedness;
+  **LLM-as-a-judge, taught in full here**: the judge as an instrument, reliability
+  before validity, agreement measures, validity by kind of output, correcting a judge's
+  rate. *Introduced: the judge.*
 
-- Task-level vs component-level evaluation; the harness as the spec
-- Golden sets; slicing, and why the aggregate hides the failure
-- **Labels and ground truth** — who decides what is true; inter-annotator agreement as
-  the ceiling on everything downstream; label leakage; labels that are themselves model
-  outputs
-- Behavioral testing: invariance, directional expectation, minimum functionality
-- Evaluating generative output: rubrics, LLM-as-judge **and its failure modes** —
-  position bias, self-preference, verbosity bias, judge drift
-- Validating a judge against human labels; inter-rater agreement
-- **The noise floor**: how many items you need, and how large a real regression is
-- Fairness metrics as slicing, in the harness
-
-**Design Studio:** *"Design the evaluation for a customer-support summarizer."*
-
-**Lab:** Measure judge–human agreement on your own P1 task, per slice.
-
-**Reading:** Book Ch. 12–15 · Ribeiro et al., *CheckList*; D'Amour et al.,
-*Underspecification*.
+**Design Studio:** *Design the runbook assistant.* **Lab:** Measure recall@5 of a
+runbook retriever on 20 labelled questions; switch it from lexical to hybrid; validate a
+judge against your own labels. **Reading:** Book Ch. 14, 17 · Lewis et al.,
+*Retrieval-Augmented Generation*, §1–3; Manning, Raghavan & Schütze, *Introduction to
+Information Retrieval*, Ch. 1 and §6.2; Zheng et al., *Judging LLM-as-a-Judge*, §1–3.
 
 ---
 
-### Week 6 — Evaluation II: online, and shipping a change
-**Framework: step 3**
+### Week 6 — How you build a ranking system
+*A feed or a search results page: billions of candidates, a few hundred ranked, position decides what gets seen.*
 
-*What's different:* Offline metrics disagree with what you want, systematically. And
-"roll back the deploy" does not name a single artifact.
+- **How it is built:** candidate generation → ranking → re-ranking as one architecture
+  with many names; the recall ceiling; the two-tower retriever and the learned ranker as
+  black boxes; what is precomputed and what is scored at the request. *Introduced: the
+  candidate index, the ranker.*
+- **How its data is handled:** the serving log as the training set (what was shown, in
+  what position, what happened); clicks as labels and what they are not; position bias;
+  the feedback loop: outputs become inputs. *Introduced: implicit labels, the loop.*
+- **How it is measured:** ranking metrics offline; online: A/B, interleaving, guardrail
+  metrics; the noise floor online; the release gate on eval scores against the noise
+  floor; what is in "the build" and rollback to a combination. *Introduced: online
+  experiments, the release gate.*
 
-- Shadow, canary, A/B, interleaving, bandits — and when each is appropriate
-- Guardrail metrics; proxy metrics and Goodhart's law
-- Ranking metrics vs engagement; position bias
-- Telemetry design: what to log so you can learn anything later
-- Harvesting labels from production; delayed and biased feedback
-- Pathological feedback loops, and detecting one you are inside of
-- **What is in "the build"**: code + prompts + model version + index + tool definitions
-  + eval suite. Versioning and reproducing all of it.
-- **Release gates on eval scores** against the noise floor — the CI gate that replaces
-  "tests pass"; gating on replay fixtures plus a live smoke suite
-- Rollback when the artifact is a combination rather than a commit
-
-**Design Studio:** **Peer mock interviews.** *"Ship a new ranking model to 400M users.
-Design the rollout."*
-
-**Lab:** Run an A/A test on the scaffold and see your own noise floor.
-
-**Reading:** Book Ch. 16, 28 · Kohavi, Tang & Xu, *Trustworthy Online Controlled
+**Design Studio:** peer mock interviews: *"Ship a new ranking model to 400M users.
+Design the rollout."* **Lab:** Run an A/A test and see your own noise floor; gate a
+change. **Reading:** Book Ch. 10, 16, 28 · Covington, Adams & Sargin, *Deep Neural
+Networks for YouTube Recommendations*; Kohavi, Tang & Xu, *Trustworthy Online Controlled
 Experiments* (selected).
 
 ---
 
-### Week 7 — Serving, inference economics, and scheduling on scarce capacity
-**Framework: steps 6–7**
+### Week 7 — How you build a generation service at volume
+*A language-model feature at 10,000 requests a second under a fixed daily budget: you cannot autoscale out of a shortage.*
 
-*What's different:* You cannot autoscale your way out of a shortage, cost per request is
-a requirement, and the unit of capacity is accelerator memory rather than CPU.
-
-- Queues and backpressure; why adding replicas does not fix a saturated queue
-- Batching, including continuous batching; throughput vs latency
-- Caching: exact, prefix, semantic — and when semantic caching is a correctness bug
-- Timeouts, retries, idempotency, circuit breakers, rate limits, quotas
-- **Streaming and perceived latency**; progressive disclosure as architecture
-- **What the orchestrator assumes and what the model breaks:** capacity is
-  memory-shaped (KV cache scales with context length — one long request can OOM a
-  stable pod); cold start is minutes (readiness must mean "weights loaded and a golden
-  probe passed," or a successful deploy causes an outage); routing is stateful (prefix
-  caches — adding replicas can *raise* p50); liveness ≠ correctness (alive and wrong)
-- **Per-customer weights:** canarying a base model needs capacity for both versions;
-  per-tenant adapters make tenant a slice, the manifest N rows, and hot-swap a deploy
-  with no diff
-- Cost engineering as system design: routing, cascades, distillation, quantization
-- *(Read a deployment definition; do not operate a cluster.)*
+- **How it is built:** the queue and backpressure; batching; caching (exact, prefix,
+  semantic, and when semantic caching is a correctness bug); timeouts, retries,
+  idempotency, rate limits; streaming; the model server and what the orchestrator assumes
+  that the model breaks (memory-shaped capacity, minute-long cold starts, stateful
+  routing); cost engineering: routing, cascades, distillation. *Introduced: the queue,
+  the cache, the rate limiter, the model server.*
+- **How its data is handled:** synthetic data: what it buys (coverage of rare cases,
+  plumbing, red-team cases) and what it cannot (the base rate); testing a system before
+  it has production data: borrowed benchmarks, expert cases, replay, shadow deployment,
+  a pilot population. *Introduced: synthetic data, shadow deployment.*
+- **How it is measured:** cost per request as a requirement; latency SLOs with a model
+  in the loop; the canary and the kill switch; quality as an SLO dimension.
+  *Introduced: the canary.*
 
 **Design Studio:** *"Design the serving stack for an LLM feature at 10k QPS under a
-fixed daily budget."*
-
-**Lab:** Hit the Gemini rate limit on purpose. Add the queue, the cache, and the
-timeout; watch the latency curve recover.
-
-**Reading:** Book Ch. 11 · Google SRE Book — handling overload, cascading failures.
-
-**Project: P2 due — Ship it.**
+fixed daily budget."* **Lab:** Hit the rate limit on purpose; add the queue, the cache
+and the timeout; watch the latency curve recover. **Reading:** Book Ch. 11 · Google SRE
+Book, handling overload and cascading failures. **Project: P2 due.**
 
 ---
 
@@ -405,178 +357,101 @@ timeout; watch the latency curve recover.
 
 ---
 
-### Week 9 — Agents I: the mechanism
-**Framework: step 6**
+### Week 9 — How you build an agentic chatbot, part 1: the loop
+*The support-ticket agent: a model that names actions, and the program around it that takes them.*
 
-*What's different:* This is a new engineering discipline, and almost all public material
-about it is framework tutorials that hide the mechanism.
+- **How it is built:** what the model actually does (a next-token distribution) and
+  what everything else is (your program); the loop: render → sample → parse → validate →
+  dispatch → append → repeat; a tool call byte by byte; the capability server and its
+  description as the model's only knowledge of the tool; error text as a user interface.
+  *Introduced: the loop, the capability server.*
+- **How its data is handled:** the trace as the system's primary dataset: every run as
+  a tree; what to record at each step; the context window as the real state.
+  *Introduced: traces as data.*
+- **How it is measured:** task success on a trajectory suite; step-level metrics
+  (parse rate, tool-call validity, steps per task, cost per task); replay fixtures for
+  an agent. *Introduced: trajectory evaluation.*
 
-- **What an LLM actually does in an agent**: given tokens, produce a distribution over
-  the next token. It does not call anything, decide anything persistently, remember
-  anything between invocations, or run a loop. Everything else is your program.
-- **What a tool call actually is**, end to end: descriptions rendered into context →
-  model emits tokens matching a format → *your harness* parses and dispatches → result
-  appended → model invoked again
-- Consequences derived, not asserted: the loop is your control flow; malformed calls are
-  samples, not exceptions; validate at the boundary; cost and latency are superlinear in
-  steps; the description is the model's only knowledge of the tool; **error messages
-  are an interface for a nondeterministic reader**
-- The control spectrum: prompt chain → router → workflow → autonomous loop
-- When *not* to build an agent
-- Stopping conditions, step limits, budget limits as safety mechanisms
-
-**Design Studio:** *"Design an agent that resolves customer refund requests."*
-
-**Lab:** Read the scaffold's loop (~100 lines). Trace one run token by token: the
-render, the parse, the dispatch, the context growth. Then break it: give it a tool that
-returns a stack trace and watch what it does.
-
-**Reading:** Book Ch. 20–21 · Anthropic, *Building Effective Agents*; a provider's
-tool-use API documentation, read as a wire format.
+**Design Studio:** *Design the refund agent.* **Lab:** *Trace the loop.* **Reading:**
+Book Ch. 20, 21, 23 · Anthropic, *Building Effective Agents*; a provider's tool-use API,
+read as a wire format.
 
 ---
 
-### Week 10 — Agents II: state, orchestration, and delegation
-**Framework: step 6**
+### Week 10 — How you build an agentic chatbot, part 2: state and orchestration
+*The same agent across process death, with a human in the loop and a budget.*
 
-*What's different:* The context window is the real state machine, and evaluating a
-forty-step trajectory is not the same problem as evaluating one answer.
+- **How it is built:** the orchestrator: what it owns (state, routing, dispatch,
+  budgets, retries, checkpoints, resume, pause for a human); durable execution across
+  function invocations; idempotency keys on consequential actions; the approval gate as
+  a row in a table; delegation and multi-agent as the same loop with a boundary.
+  *Introduced: the orchestrator, the state table, the approval gate.*
+- **How its data is handled:** memory as data with a write path controlled by a model;
+  context engineering: what enters the context, what is summarized, what is dropped;
+  retention of traces. *Introduced: memory and context as datasets.*
+- **How it is measured:** evaluating multi-step runs: exactly-once actions under
+  injected failures; cost and steps per task against a budget; where a run went wrong.
+  *Introduced: fault injection on a run.*
 
-- Context as state: budgeting, compaction, summarization; what gets evicted and what
-  breaks when it does
-- Memory tiers — and which are just retrieval in a hat
-- **The orchestrator**: what it owns — state, routing, dispatch, budgets, retries,
-  concurrency, termination, checkpointing, resumption, human handoff
-- Durable execution across process death; the approval gate as a suspended run
-- Delegation and subagents; context isolation; multi-agent as the continuum's far end;
-  coordination failures — deadlock, infinite delegation, cost explosion
-- **Evaluating agents**: trajectory vs outcome, partial credit, per-step attribution,
-  cost and step count as eval dimensions; a right answer by a stupid path is a latent
-  failure
-
-**Design Studio:** *"Design a research agent that runs for 30 minutes and survives a
-process restart."*
-
-**Lab:** Kill the scaffold's agent mid-run and watch what it loses. Add compaction and
-observe what breaks.
-
-**Reading:** Book Ch. 18–19, 22, 24, 26.
+**Design Studio:** *Design the agent that survives a kill.* **Lab:** *Kill and compact.*
+**Reading:** Book Ch. 18, 19, 22, 24, 26.
 
 ---
 
-### Week 11 — The integration and trust layer
-**Framework: step 6**
+### Week 11 — The agentic chatbot with a second vendor: the integration and trust layer
+*A capability server you did not write appears. Discovery, description, invocation, contract, authorization, session.*
 
-*What's different:* The consumer of the interface is a nondeterministic process that must
-discover, interpret, and invoke at runtime — not a programmer reading docs at build time.
+- **How it is built:** the six integration problems and the current protocols as
+  instances (MCP, A2A); why RPC rather than REST; the contract and its versioning;
+  three-party authorization and why credentials never enter the context; scoped tokens.
+  *Introduced: the protocol layer, scoped tokens.*
+- **How its data is handled:** tool descriptions and results as untrusted data; what
+  from a vendor's response may enter the context; provenance on every appended
+  message. *Introduced: data trust boundaries.*
+- **How it is measured:** contract tests against a capability server; agreement
+  between the agent's actions and a reviewer on sampled runs; labelling agent outputs.
+  *Introduced: labelling trajectories.*
 
-**The general problem first.** An agent needs capabilities it was not hard-coded
-against. Six problems, and every protocol answers some subset:
-
-1. **Discovery** — how does the agent learn what exists?
-2. **Description** — how is a capability described to a *model* reader? Not syntax —
-   when to use it, what it means, what it costs.
-3. **Invocation** — the wire mechanics.
-4. **Contract and versioning** — capability sets that change mid-session.
-5. **Authorization** — who acts, on whose behalf, with what scope, who consented.
-6. **Session and direction** — long-lived state, progress, streaming, server-initiated
-   calls.
-
-**Then the design decisions:**
-
-- Why RPC rather than REST for a verb-oriented caller; why the session must be
-  bidirectional. Derive it; don't memorize it.
-- The scaffold's capability server as one implementation, mapped onto the six problems.
-  You have been calling it since Week 1; now you know why it is shaped that way.
-- Agent→agent as a different problem shape: opaque stochastic remote party, task
-  lifecycle instead of return value, goal delegation instead of invocation
-- The N×M problem; the LSP analogy; what protocols do *not* solve
-- **A second, "vendor" capability server** appears this week: same client code, new
-  capability, zero integration work. Keep it. You will meet it again in Week 12.
-
-**Authorization — the hard part, and it is not solved.** Three parties: user, agent
-acting for them, resource.
-
-- Ambient authority is how injection becomes privilege; least privilege as containment
-- Scope vs intent; capability-based security and attenuated tokens
-- Consent at the moment of consequence; the approval gate as an authorization primitive
-- **Credentials never enter the context** — derived: context is data the model can be
-  induced to emit
-- Audit and non-repudiation for a stochastic actor; token lifetime for a long-running
-  agent
-
-**Design Studio:** **Peer mock interviews.** *"Design the integration layer for an agent
-that must act across five internal systems on behalf of a user."*
-
-**Lab:** Attach a per-task scoped token to your client; watch the server refuse an
-out-of-scope refund. Then connect the vendor server and use it with no code changes.
-
-**Reading:** Book Ch. 23, 25, 27 · The capability-protocol specification your scaffold
-uses (primitives, transports, authorization), read as a primary source.
-
-**Project: P3 due — Make it act.** **P4 assigned.**
+**Design Studio:** peer mock interviews on the full agent design. **Lab:** *Scoped
+token.* **Reading:** Book Ch. 25, 27. **Project: P3 due. P4 assigned.**
 
 ---
 
-### Week 12 — Security and safety for agentic systems
-**Framework: step 7**
+### Week 12 — The agentic chatbot under attack: security and safety
+*The second vendor's response contains instructions. What does the system do, and what can it be made to do?*
 
-*What's different:* Your system takes consequential actions, and its instructions and its
-data arrive through the same channel.
+- **How it is built:** the threat model for a system that reads untrusted text and
+  takes actions; containment: least privilege, blast radius, the approval gate at the
+  moment of consequence, the kill switch; where guardrails sit and why a guardrail is
+  also a model. *Introduced: containment.*
+- **How its data is handled:** safety eval sets and red-team cases as datasets;
+  injection corpora; what the trace must keep for an incident and what it must not.
+  *Introduced: adversarial datasets.*
+- **How it is measured:** attack success rate per attack class, with its interval;
+  containment measured as what an attack could reach, not whether it was caught.
+  *Introduced: red-team measurement.*
 
-- Threat-modeling an agentic system; what an attacker actually wants
-- **Prompt injection as a confused-deputy problem** — and why it is not patched
-- The lethal combination: private data + untrusted content + an exfiltration channel
-- Indirect injection through tickets, retrieved documents, tool results — **and tool
-  descriptions**: the vendor server from Week 11 is not what it seemed
-- Least privilege for tools; capability scoping; sandboxing; egress control
-- Approval gates for consequential actions; spending and blast-radius limits
-- Supply chain: models, prompts, indexes, third-party capability servers
-- Classic ML attacks where they still bind: poisoning, extraction, membership inference
-- Filtering and its limits: the detector is a model; bound the blast radius instead
-
-**Design Studio — audit format:** *"An agent with email access reads an untrusted
-document. Threat model it."*
-
-**Lab:** **Cross-pair red team.** Attack another pair's agent via indirect injection —
-through a ticket, and through the vendor server. Share findings, not exploits, until
-the debrief. Then patch yours.
-
-**Reading:** Book Ch. 32–33 · Willison on prompt injection and the lethal trifecta;
-OWASP Top 10 for LLM Applications.
+**Design Studio:** system audit of the Week 11 designs. **Lab:** *Red team.* **Reading:**
+Book Ch. 32, 33.
 
 ---
 
 ### Week 13 — Operating a live AI system
-**Framework: step 7**
+*Any of the above, in production for a year: the world moved, the vendor changed the model, and the pager went off.*
 
-*What's different:* The system decays with no edit at all.
+- **How it is built:** alarms on cost, errors and quality; the vendor drift canary;
+  SLOs with quality as a dimension; the improvement loop as a DAG (retraining,
+  re-indexing, backfills); game day. *Introduced: alarms, SLOs, the canary.*
+- **How its data is handled:** data over time: drift in inputs, labels and outputs;
+  versioning datasets as they grow; retention and deletion. *Introduced: drift
+  detection.*
+- **How it is measured:** monitoring as continuous evaluation; the noise floor in
+  production; incident review for a stochastic actor. *Introduced: production
+  monitoring.*
 
-- Tracing nondeterministic workflows: what *is* a request when one turn becomes forty
-  tool calls? Unbounded span nesting; bimodal latency by task type
-- Metrics that matter: cost per resolution, loop depth, tool error rate, escalation rate,
-  quality — alongside the usual four
-- Drift: data drift, concept drift, and **your vendor silently changing the model**
-- Continuous evaluation in production; canarying a prompt change
-- **The improvement loop as a DAG:** retraining and re-indexing cadence, backfills
-  that are hard when features are time-dependent, idempotent tasks because retries are
-  certain *(one instance: a DAG scheduler — primer 7)*
-- SLOs and error budgets for a probabilistic system; quality as an SLO dimension
-- Degradation ladders; incident response; the postmortem when the root cause has no diff
-- Technical debt and the maintenance burden; when to delete a model
-
-**Design Studio:** **The callback.** You are handed back your Week 1 fraud-detection
-scope. Redesign it. The gap between the two answers is the course.
-
-**Lab:** **Game day.** The instructor injects a fault into your running system — a
-swapped replay fixture that simulates the vendor changing the model, a poisoned runbook,
-a drift in the ticket stream. Detect it from traces, triage the layer, mitigate, start
-the postmortem. Instructor in the room.
-
-**Reading:** Book Ch. 29–31.
-
-**Project: P4 due — Break it, run it.** Repository tagged at the deadline; the Week 14
-demo runs off the tag.
+**Design Studio:** the Week 1 envelope returns: redesign the fraud system with
+everything since. **Lab:** *Game day.* **Reading:** Book Ch. 29, 30, 31 · Google SRE
+Book, *Monitoring Distributed Systems*. **Project: P4 due. Repository tagged.**
 
 ---
 
