@@ -263,14 +263,38 @@ Cascades*; Breck et al., *The ML Test Score*. **Project: P1 due. P2 assigned.**
 
 ---
 
-### Week 5 — How you build a retrieval-grounded assistant
+### Week 5 — How you build a ranking system
+*A feed or a search results page: billions of candidates, a few hundred ranked, position decides what gets seen.*
+
+- **How it is built:** candidate generation → filtering → ranking → ordering as one
+  architecture with many names; the recall ceiling; embeddings and the two towers; one
+  approximate-nearest-neighbour index worked in full (the inverted file) and what a
+  vector database adds; what is precomputed and what is scored at the request.
+  *Introduced: the index, the vector database, the ranker.*
+- **How its data is handled:** the serving log as the training set (what was shown, in
+  what position, what happened); clicks as labels and what they are not; position bias;
+  the feedback loop: outputs become inputs. *Introduced: implicit labels, the loop.*
+- **How it is measured:** recall@k per stage and NDCG on logged pages, offline; what
+  offline measurement cannot see; the A/B test against the A/A floor, interleaving,
+  guardrail metrics and the release gate. *Introduced: online experiments, the release
+  gate.*
+
+**Design Studio:** *Design the simplified Amazon store front.* **Lab:** Publish the API:
+a chat turn and the triage step behind an API gateway, with a public URL and a Swagger
+page; call a classmate's. **Reading:** Book Ch. 10, 16, 28 · Covington, Adams & Sargin, *Deep Neural
+Networks for YouTube Recommendations*; Kohavi, Tang & Xu, *Trustworthy Online Controlled
+Experiments* (selected).
+
+---
+
+### Week 6 — How you build a retrieval-grounded assistant
 *An internal question-answering system over a document corpus: the model's knowledge is frozen, and retrieval is how the right knowledge reaches it.*
 
 - **How it is built:** the indexing path (corpus → chunks → index, offline) and the
-  request path (query → retrieve → assemble context → generate → cite); embeddings as a
-  learned map and where they fail; one approximate-nearest-neighbour algorithm worked;
-  hybrid retrieval and rerank as the cascade again; the unit of retrieval; access control
-  at retrieval time. *Introduced: the index, chunking, hybrid retrieval.*
+  request path (query → retrieve → assemble context → generate → cite); the lexical index
+  beside the vector index, and hybrid retrieval as the cascade again; the unit of
+  retrieval; access control at retrieval time. *Introduced: the lexical index, chunking,
+  hybrid retrieval.*
 - **How its data is handled:** the corpus as a dataset (provenance, freshness,
   invalidation, permissions); the context as data the model is given; labelling: where
   labels for text come from, the written rule, agreement, cost per label.
@@ -281,34 +305,11 @@ Cascades*; Breck et al., *The ML Test Score*. **Project: P1 due. P2 assigned.**
   before validity, agreement measures, validity by kind of output, correcting a judge's
   rate. *Introduced: the judge.*
 
-**Design Studio:** *Design the runbook assistant.* **Lab:** Measure recall@5 of a
-runbook retriever on 20 labelled questions; switch it from lexical to hybrid; validate a
-judge against your own labels. **Reading:** Book Ch. 14, 17 · Lewis et al.,
+**Design Studio:** *Design the runbook assistant.* **Lab:** Build the runbook index: lexical, then
+vector, then hybrid; recall@5 on 20 labelled questions, per slice; validate a judge
+against your own labels. **Reading:** Book Ch. 14, 17 · Lewis et al.,
 *Retrieval-Augmented Generation*, §1–3; Manning, Raghavan & Schütze, *Introduction to
 Information Retrieval*, Ch. 1 and §6.2; Zheng et al., *Judging LLM-as-a-Judge*, §1–3.
-
----
-
-### Week 6 — How you build a ranking system
-*A feed or a search results page: billions of candidates, a few hundred ranked, position decides what gets seen.*
-
-- **How it is built:** candidate generation → ranking → re-ranking as one architecture
-  with many names; the recall ceiling; the two-tower retriever and the learned ranker as
-  black boxes; what is precomputed and what is scored at the request. *Introduced: the
-  candidate index, the ranker.*
-- **How its data is handled:** the serving log as the training set (what was shown, in
-  what position, what happened); clicks as labels and what they are not; position bias;
-  the feedback loop: outputs become inputs. *Introduced: implicit labels, the loop.*
-- **How it is measured:** ranking metrics offline; online: A/B, interleaving, guardrail
-  metrics; the noise floor online; the release gate on eval scores against the noise
-  floor; what is in "the build" and rollback to a combination. *Introduced: online
-  experiments, the release gate.*
-
-**Design Studio:** peer mock interviews: *"Ship a new ranking model to 400M users.
-Design the rollout."* **Lab:** Run an A/A test and see your own noise floor; gate a
-change. **Reading:** Book Ch. 10, 16, 28 · Covington, Adams & Sargin, *Deep Neural
-Networks for YouTube Recommendations*; Kohavi, Tang & Xu, *Trustworthy Online Controlled
-Experiments* (selected).
 
 ---
 
