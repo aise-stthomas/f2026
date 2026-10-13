@@ -132,6 +132,7 @@ before it. The course book's chapters are listed in the syllabus.
 | [Configuring AWS](supplemental/configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 | [Serverless functions](supplemental/serverless-functions.pdf) | A short primer: what a function is, why a model call lives in one, cold and warm, the time limit, quotas, cost. |
 | [EventBridge](supplemental/eventbridge.pdf) | A one-page primer: a clock, a target and an input, and what we use it for. |
+| [API gateway](supplemental/api-gateway.pdf) | A one-page primer: a public address for a function, and what sits on either side of it. |
 
 ## Projects
 

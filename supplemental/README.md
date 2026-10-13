@@ -11,3 +11,4 @@ are on the [course site](https://aise-stthomas.github.io/).
 | [Configuring AWS](configuring-aws.md) | The Learner Lab account: getting in, the usage alarms, the rules, and using it for development. |
 | [Serverless functions](serverless-functions.pdf) | A short primer: what a function is, why a model call lives in one, cold and warm, the time limit, quotas, cost. |
 | [EventBridge](eventbridge.pdf) | A one-page primer: a clock, a target and an input, and what we use it for. |
+| [API gateway](api-gateway.pdf) | A one-page primer: a public address for a function, and what sits on either side of it. |
