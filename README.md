@@ -42,7 +42,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 2 | Tue, Sep 22 | Requirements, and measuring AI systems | [slides](lectures/week-02/slides.pdf) | [A résumé screener rejected a qualified candidate](lectures/week-02/studio.pdf) · [answers](lectures/week-02/studio-answers.pdf) | [Can you tell a change from a wobble?](https://github.com/aise-stthomas/measure-it/blob/main/LAB.md) | [reading](#reading-week-2) | P1 assigned: Measure it. |
 | 3 | Tue, Sep 29 | Comparing versions, and architecture | [slides](lectures/week-03/slides.pdf) | [Design the support desk](lectures/week-03/studio.pdf) | [Put the model behind a URL](https://github.com/aise-stthomas/put-the-model-behind-a-url/blob/main/LAB.md) | [reading](#reading-week-3) | P1 continues. |
 | 4 | Tue, Oct 6 | How you build a scoring system | [slides](lectures/week-04/slides.pdf) | [Design the delivery-time estimate](lectures/week-04/studio.pdf) | [Score every account, nightly and at the request](https://github.com/aise-stthomas/score-every-account/blob/main/LAB.md) | [reading](#reading-week-4) | P1 due Sun, Oct 11. |
-| 5 | Tue, Oct 13 | How you build a ranking system | [slides](lectures/week-05/slides.pdf) | [Design the simplified Amazon store front](lectures/week-05/studio.pdf) | [Publish the API](https://github.com/aise-stthomas/publish-the-api/blob/main/LAB.md) | [reading](#reading-week-5) | P2 assigned: Ship it. |
+| 5 | Tue, Oct 13 | How you build a ranking system | [slides](lectures/week-05/slides.pdf) | [Design the simplified Amazon store front](lectures/week-05/studio.pdf) | [Publish the API](https://github.com/aise-stthomas/publish-the-api/blob/main/LAB.md) | [reading](#reading-week-5) | [P2 assigned: Ship it.](https://github.com/aise-stthomas/ship-it) |
 | 6 | | How you build a retrieval-grounded assistant | | | | [reading](#reading-week-6) | |
 | 7 | | How you build a generation service at volume | | | | [reading](#reading-week-7) | P2 due. |
 | 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
@@ -144,7 +144,7 @@ project's own repository holds its `PROJECT.md`, which is the source of truth.
 | Project | Assigned | Due | What you build |
 |---|---|---|---|
 | [P1 — Measure it](https://github.com/aise-stthomas/measure-it) | Wk 2 | Wk 4 | An evaluation harness for the triage step: a golden set with slices, scorers, a judge you validated, the noise floor, one question answered with evidence, and the blind-spot register |
-| P2 — Ship it | Wk 5 | Wk 7 | Your triage service behind a public API: the harness as a release gate in CI, a canary with a kill switch, telemetry |
+| [P2 — Ship it](https://github.com/aise-stthomas/ship-it) | Wk 5 | Wk 7 | The triage service behind a public API, every inference in a DynamoDB table, and your harness run against the live service on three datasets |
 | P3 — Make it act | Wk 8 | Wk 11 | Your own agent loop and orchestrator over the capability server |
 | P4 — Break it, run it | Wk 11 | Wk 13 | Hardening after the red team, SLOs, tracing, the game-day postmortem |
 
