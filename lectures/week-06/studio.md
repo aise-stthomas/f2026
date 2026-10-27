@@ -19,6 +19,20 @@ to an agent.
 | **unanswerable** | about a third: compensation the rules do not give, a promise an agent made by phone |
 | **ground truth** | a rebooking in the session; a claim decided in days; a complaint in weeks; mostly nothing |
 
+**Task.**
+
+1. **Architecture.**
+   - Draw the whole system: the services, the jobs, the stores, and the flow between them
+   - Show how a fare rule, a waiver, a flight-status update and the booking each reach
+     an answer, and how old each can be when the passenger reads it
+2. **Measurement.**
+   - Per stage, before any passenger sees it: what is measured, against what
+   - The unanswerable slice: where its questions come from, including last week's
+     answerable questions whose waiver has gone; how many the floor stops before
+     generation, and how many the model answers anyway
+   - What decides a release, and one guardrail that can stop a release whose primary
+     metric rose
+
 **Your design should handle:**
 
 1. Each source at its rate: indexed, summarized ahead, or looked up at the request; how
@@ -34,18 +48,6 @@ to an agent.
 
 **(Bonus)** 150 questions a second against 50 generations a second: what the passenger
 still gets, and what the system never does.
-
-**Task.**
-
-1. **Architecture.**
-   - Draw the whole system: the services, the jobs, the stores, and the flow between them
-   - Show how a fare rule, a waiver, a flight-status update and the booking each reach
-     an answer, and how old each can be when the passenger reads it
-2. **Measurement.**
-   - Per stage, before any passenger sees it: what is measured, against what
-   - The unanswerable slice
-   - What decides a release, and one guardrail that can stop a release whose primary
-     metric rose
 
 **One question.** At 19:40 the assistant told a passenger their hotel was covered, and
 quoted the waiver. The waiver was withdrawn at 19:30. What does the log hold, which
