@@ -2,24 +2,24 @@
 
 **The system.** A storm closes the airline's hub for the evening. Every passenger on a
 cancelled flight opens the app and asks what they can do. The assistant answers within
-5 seconds from the fare rules, which change monthly, and the waivers operations
-publishes during the disruption, for this passenger's flight, as things stand right
-now, quoting the rule or waiver it relied on.
+5 seconds from the airline's own documents, as things stand right now, quoting the rule
+or waiver it relied on.
 
-| | |
-|---|---|
-| **the waivers** | routes, dates, what the passenger may do, until when; withdrawn within the hour |
-| **the flight status** | 1,500 flights; status, gate and rebooking options change by the minute |
-| **unanswerable** | about a third of questions: compensation the rules do not give, a promise an agent made by phone |
+| source | changes | what it is |
+|---|---|---|
+| **fare rules** | monthly | 2,000 documents |
+| **waivers** | hourly | routes, dates, what the passenger may do, until when |
+| **flight status** | minute | 1,500 flights: status, gate, rebooking options |
+| **booking** | per request | this passenger's flight, fare class, what they have been offered |
 
 **Task.**
 
 1. **Architecture.**
-   - Draw the whole system, and show how a fare rule, a waiver, a flight-status update
-     and the booking each reach an answer, and how old each can be when it is read
+   - Draw the whole system; show how each source reaches an answer, and how old it can be
 2. **Measurement.**
    - Per stage, before any passenger sees it: what is measured, against what
-   - The unanswerable slice: its sources; what the floor stops, what the model answers anyway
+   - The unanswerable third: where those questions come from; what the floor stops, what the
+     model answers anyway
    - What decides a release, and one guardrail that can stop a release whose primary
      metric rose
 
@@ -30,8 +30,9 @@ now, quoting the rule or waiver it relied on.
 3. Ten thousand passengers asking the same question in an hour: the cache and its key
 4. Money is quoted verbatim with the waiver's id: what checks that, on every answer
 
-**(Bonus)** 150 questions a second at the peak against 50 generations a second from the
-vendor: what the passenger still gets, and what the system never does.
+**(Bonus)** At the storm's peak 150 questions a second arrive, and the language-model
+service can serve 50 a second: what does the passenger still get, and what does the
+system never do?
 
 **One question.** At 19:40 the assistant promised a hotel under a waiver withdrawn at
 19:30. What does the log hold, which component let it through, which should have stopped it?
