@@ -47,17 +47,22 @@ flight, fare class, what they paid, what they have already been offered.
 
 **Task.**
 
-1. **Architecture.** What is computed about every document before any question, what
-   is computed every few minutes, and what is computed at the request? Draw the whole
-   system: the services, what is orchestrated, the stores, and the flow between them.
-   Show how each source reaches an answer: a fare rule, a waiver, a flight-status
-   update, this passenger's booking. Be ready to say, for each, how old it can be by
-   the time the passenger reads it.
-2. **Data handling.** The tables, one row each. A waiver as a row, exactly, with its
-   expiry. The labelled set: what a labelled question is pinned to, and what happens
-   to it when the waiver it depends on is withdrawn. Trace one waiver, published at
-   18:05, to the first answer that quotes it, and to the first answer that stops
-   quoting it after it is withdrawn at 21:30.
+1. **Architecture.**
+   - What is computed about every document before any question, what is computed
+     every few minutes, and what is computed at the request
+   - Draw the whole system: the services, what is orchestrated, the stores, and the
+     flow between them
+   - Show how each source reaches an answer: a fare rule, a waiver, a flight-status
+     update, this passenger's booking
+   - Be ready to say, for each source, how old it can be by the time the passenger
+     reads it
+2. **Data handling.**
+   - The tables, one row each
+   - A waiver as a row, exactly, with its expiry
+   - The labelled set: what a labelled question is pinned to, and what happens to it
+     when the waiver it depends on is withdrawn
+   - Trace one waiver, published at 18:05, to the first answer that quotes it, and to
+     the first answer that stops quoting it after it is withdrawn at 21:30
 3. **Measurement.**
    - Per stage, before any passenger sees it: what is measured, and against what
    - The unanswerable slice: how it is built, and what it measures
