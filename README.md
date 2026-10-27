@@ -43,7 +43,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 3 | Tue, Sep 29 | Comparing versions, and architecture | [slides](lectures/week-03/slides.pdf) | [Design the support desk](lectures/week-03/studio.pdf) | [Put the model behind a URL](https://github.com/aise-stthomas/put-the-model-behind-a-url/blob/main/LAB.md) | [reading](#reading-week-3) | P1 continues. |
 | 4 | Tue, Oct 6 | How you build a scoring system | [slides](lectures/week-04/slides.pdf) | [Design the delivery-time estimate](lectures/week-04/studio.pdf) | [Score every account, nightly and at the request](https://github.com/aise-stthomas/score-every-account/blob/main/LAB.md) | [reading](#reading-week-4) | P1 due Sun, Oct 11. |
 | 5 | Tue, Oct 13 | How you build a ranking system | [slides](lectures/week-05/slides.pdf) | [Design the simplified Amazon store front](lectures/week-05/studio.pdf) | [Publish the API](https://github.com/aise-stthomas/publish-the-api/blob/main/LAB.md) | [reading](#reading-week-5) | [P2 assigned: Ship it.](https://github.com/aise-stthomas/ship-it) |
-| 6 | | How you build a retrieval-grounded assistant | | | | [reading](#reading-week-6) | |
+| 6 | | How you build a retrieval-grounded assistant | [slides](lectures/week-06/slides.pdf) | [Design the airline's disruption assistant](lectures/week-06/studio.pdf) | [Build the runbook index](https://github.com/aise-stthomas/build-the-runbook-index/blob/main/LAB.md) | [reading](#reading-week-6) | P2 continues. |
 | 7 | | How you build a generation service at volume | | | | [reading](#reading-week-7) | P2 due. |
 | 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
 | 9 | | How you build an agentic chatbot, part 1: the loop | | | | [reading](#reading-week-9) | |

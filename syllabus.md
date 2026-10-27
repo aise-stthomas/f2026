@@ -293,8 +293,10 @@ Experiments* (selected).
 - **How it is built:** the indexing path (corpus → chunks → index, offline) and the
   request path (query → retrieve → assemble context → generate → cite); the lexical index
   beside the vector index, and hybrid retrieval as the cascade again; the unit of
-  retrieval; access control at retrieval time. *Introduced: the lexical index, chunking,
-  hybrid retrieval.*
+  retrieval; access control at retrieval time; what the model receives: the
+  instructions, examples in the prompt, a precomputed briefing, lookups at the
+  request, and the context budget; freshness as a ladder: index it, summarize it, or
+  look it up. *Introduced: the lexical index, chunking, hybrid retrieval, the briefing.*
 - **How its data is handled:** the corpus as a dataset (provenance, freshness,
   invalidation, permissions); the context as data the model is given; labelling: where
   labels for text come from, the written rule, agreement, cost per label.
@@ -305,7 +307,7 @@ Experiments* (selected).
   before validity, agreement measures, validity by kind of output, correcting a judge's
   rate. *Introduced: the judge.*
 
-**Design Studio:** *Design the runbook assistant.* **Lab:** Build the runbook index: lexical, then
+**Design Studio:** *Design the airline's disruption assistant.* **Lab:** Build the runbook index: lexical, then
 vector, then hybrid; recall@5 on 20 labelled questions, per slice; validate a judge
 against your own labels. **Reading:** Book Ch. 14, 17 · Lewis et al.,
 *Retrieval-Augmented Generation*, §1–3; Manning, Raghavan & Schütze, *Introduction to
