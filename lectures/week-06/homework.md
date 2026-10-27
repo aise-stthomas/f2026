@@ -37,7 +37,7 @@ the code. What does the lecture's design do about both?
 - (d) Raise the number of candidates each index returns until both chunks appear.
 
 **3.** The policy assistant's context now holds, besides the instructions and the eight
-passages, a dozen worked examples for the router and a briefing written by a model
+passages, a few worked answers in the required form and a briefing written by a model
 every ten minutes. According to the lecture, what do the examples and the briefing have
 in common?
 
@@ -45,8 +45,8 @@ in common?
   version.
 - (b) Both are artifacts built before the request, each with a version and an as-of,
   each measured by the harness, and each changed only through a release; the examples
-  are a dataset with a slice per label, and the briefing is judged for groundedness
-  against the sources it cites.
+  are a dataset whose effect shows in the format and NOT_FOUND rates, and the briefing
+  is judged for groundedness against the sources it cites.
 - (c) Both are part of the model's weights after fine-tuning.
 - (d) Both are kept in the prompt string and edited by hand when an answer is wrong.
 
