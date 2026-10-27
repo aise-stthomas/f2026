@@ -33,7 +33,7 @@ different rates:
 And one thing that is nobody else's business: **the passenger's own booking**: their
 flight, fare class, what they paid, what they have already been offered.
 
-**The numbers, given.** So the design can start from them:
+**The numbers:**
 
 | Number | Value |
 |---|---|
@@ -44,6 +44,23 @@ flight, fare class, what they paid, what they have already been offered.
 | the flight status | **1,500 flights**, each changing several times an hour |
 | the vendor | **50 generations a second** contracted; 300 ms to embed a question; 2 to 4 s to generate |
 | unanswerable | **about a third** of questions: compensation the rules do not give, a promise an agent made by phone, a hotel the airline does not offer tonight |
+
+**Task.**
+
+1. **Architecture.** What is computed about every document before any question, what
+   is computed every few minutes, and what is computed at the request? Draw the whole
+   system: the services, what is orchestrated, the stores, and the flow between them.
+   Then the same system on two axes, online and offline, retrieval and generation,
+   naming the artifact each online stage reads and how old it is allowed to be.
+2. **Data handling.** The tables, one row each. A waiver as a row, exactly, with its
+   expiry. The labelled set: what a labelled question is pinned to, and what happens
+   to it when the waiver it depends on is withdrawn. Trace one waiver, published at
+   18:05, to the first answer that quotes it, and to the first answer that stops
+   quoting it after it is withdrawn at 21:30.
+3. **Measurement.** Per stage, before any passenger sees it, against what? The
+   unanswerable slice: how it is built and what it measures. With passengers, what
+   decides a release? Name one guardrail that can stop a release whose primary metric
+   rose.
 
 **Your design should handle:**
 
@@ -71,23 +88,6 @@ flight, fare class, what they paid, what they have already been offered.
 **(Bonus)** the vendor's rate limit arrives with the storm: 150 questions a second
 against 50 generations a second. Design the degraded mode: what the passenger still
 gets, and what the system never does.
-
-**Task.**
-
-1. **Architecture.** What is computed about every document before any question, what
-   is computed every few minutes, and what is computed at the request? Draw the whole
-   system: the services, what is orchestrated, the stores, and the flow between them.
-   Then the same system on two axes, online and offline, retrieval and generation,
-   naming the artifact each online stage reads and how old it is allowed to be.
-2. **Data handling.** The tables, one row each. A waiver as a row, exactly, with its
-   expiry. The labelled set: what a labelled question is pinned to, and what happens
-   to it when the waiver it depends on is withdrawn. Trace one waiver, published at
-   18:05, to the first answer that quotes it, and to the first answer that stops
-   quoting it after it is withdrawn at 21:30.
-3. **Measurement.** Per stage, before any passenger sees it, against what? The
-   unanswerable slice: how it is built and what it measures. With passengers, what
-   decides a release? Name one guardrail that can stop a release whose primary metric
-   rose.
 
 **One question to answer somewhere in your design.** At 19:40 the assistant told a
 passenger their hotel tonight would be covered, and quoted the waiver. The waiver had
