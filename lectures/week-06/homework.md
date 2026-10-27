@@ -8,20 +8,18 @@
 
 ---
 
-**1.** An assistant answers employees' questions from 200,000 internal documents, a
-third of them restricted. A team proposes putting the sentence "do not reveal
-documents the user may not read" in the system instruction and otherwise retrieving
-from the whole corpus. Which design does the lecture give instead, and why?
+**1.** A forty-page policy holds the answer to "Can I expense a monitor for my home
+office? I'm in Berlin" in one sentence of section 4.2, with an exception for Germany in
+section 4.3. The model can be handed about eight passages. Which unit of retrieval does
+the lecture choose, and why?
 
-- (a) Retrieve from the whole corpus, then have a second model call remove restricted
-  passages before generation.
-- (b) Embed the employee's groups into the question vector so that restricted chunks
-  land far away.
-- (c) Keep two indexes, one of public documents and one of restricted ones, and route
-  the question by a classifier.
-- (d) Copy each document's readers onto its chunks at indexing time and filter inside
-  the search, so that a passage the model is given is already one this employee may
-  read; the model is text in, text out, and an instruction is not a permission.
+- (a) The whole document, since the answer is certainly somewhere inside it.
+- (b) The sentence, since it is the smallest unit that contains the answer.
+- (c) A fixed window of 200 words, since equal sizes keep the index simple.
+- (d) A chunk cut on the document's own structure, capped in size, with the heading path
+  prepended and a rule kept with its exception, carrying the document version and the
+  as-of as metadata; the sentence alone loses the Germany exception, and the document
+  alone buries it among 25,000 tokens.
 
 **2.** The chunk that answers "Can I expense a monitor for my home office?" says
 "display," not "monitor," and is missed by the lexical index. A second question asks
