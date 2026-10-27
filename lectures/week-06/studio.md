@@ -57,10 +57,11 @@ flight, fare class, what they paid, what they have already been offered.
    to it when the waiver it depends on is withdrawn. Trace one waiver, published at
    18:05, to the first answer that quotes it, and to the first answer that stops
    quoting it after it is withdrawn at 21:30.
-3. **Measurement.** Per stage, before any passenger sees it, against what? The
-   unanswerable slice: how it is built and what it measures. With passengers, what
-   decides a release? Name one guardrail that can stop a release whose primary metric
-   rose.
+3. **Measurement.**
+   - Per stage, before any passenger sees it: what is measured, and against what
+   - The unanswerable slice: how it is built, and what it measures
+   - With passengers: what decides a release
+   - One guardrail that can stop a release whose primary metric rose
 
 **Your design should handle:**
 
