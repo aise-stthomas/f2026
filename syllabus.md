@@ -82,9 +82,9 @@ for each step are published in [rubric.md](https://aise-stthomas.github.io/rubri
 | 2 | **Frame the AI task** — what decision the model makes, the I/O contract, whether it should be a model at all | Week 2 |
 | 3 | **Metrics** — business metric → online proxy → offline metric, plus guardrails | Weeks 2–3, 6 |
 | 4 | **Data** — sources, labels, freshness, privacy, feedback loop | Week 4 |
-| 5 | **High-level architecture** — components, data flow, where the model lives, sync vs async | Weeks 3–7, one archetype a week |
-| 6 | **Deep dive** — retrieval and ranking, the agent loop, the integration layer | Weeks 5–7, 9–11 |
-| 7 | **Failure, scale & operations** — what breaks, monitoring, drift, rollout, cost at scale | Weeks 12–13 |
+| 5 | **High-level architecture** — components, data flow, where the model lives, sync vs async | Weeks 3–6, one archetype a week |
+| 6 | **Deep dive** — retrieval and ranking, the agent loop, the integration layer | Weeks 5–6, 8–10 |
+| 7 | **Failure, scale & operations** — what breaks, monitoring, drift, rollout, cost at scale | Weeks 11–12 |
 
 ## Weekly structure
 
@@ -105,7 +105,7 @@ Lecture order serves the labs; project order serves the build. Neither constrain
 other.
 
 The Studio runs in three formats: **greenfield design** most weeks; **peer mock
-interviews** twice (Weeks 6 and 11); and **system audit** twice (Weeks 4 and 12) — here
+interviews** twice (Weeks 6 and 10); and **system audit** twice (Weeks 4 and 11) — here
 is an existing system, find the three things that will hurt you. Most of you will
 inherit an AI system before you design one, and auditing is the skill nobody teaches.
 
@@ -143,7 +143,7 @@ a sample from a distribution, not an answer.
 - The design framework; course structure; the scaffold walkthrough
 
 **Design Studio:** *"Design a system that flags fraudulent transactions."* Scope only —
-no solution. **Keep your answer. You will be handed it back in Week 13.**
+no solution. **Keep your answer. You will be handed it back in Week 12.**
 
 **Lab:** *Feel the distribution.* Send one fixed input through the model 100 times and
 plot the spread. Then find the slice of the scaffold where it fails 30% of the time.
@@ -315,35 +315,11 @@ Information Retrieval*, Ch. 1 and §6.2; Zheng et al., *Judging LLM-as-a-Judge*,
 
 ---
 
-### Week 7 — How you build a generation service at volume
-*A language-model feature at 10,000 requests a second under a fixed daily budget: you cannot autoscale out of a shortage.*
-
-- **How it is built:** the queue and backpressure; batching; caching (exact, prefix,
-  semantic, and when semantic caching is a correctness bug); timeouts, retries,
-  idempotency, rate limits; streaming; the model server and what the orchestrator assumes
-  that the model breaks (memory-shaped capacity, minute-long cold starts, stateful
-  routing); cost engineering: routing, cascades, distillation. *Introduced: the queue,
-  the cache, the rate limiter, the model server.*
-- **How its data is handled:** synthetic data: what it buys (coverage of rare cases,
-  plumbing, red-team cases) and what it cannot (the base rate); testing a system before
-  it has production data: borrowed benchmarks, expert cases, replay, shadow deployment,
-  a pilot population. *Introduced: synthetic data, shadow deployment.*
-- **How it is measured:** cost per request as a requirement; latency SLOs with a model
-  in the loop; the canary and the kill switch; quality as an SLO dimension.
-  *Introduced: the canary.*
-
-**Design Studio:** *"Design the serving stack for an LLM feature at 10k QPS under a
-fixed daily budget."* **Lab:** Hit the rate limit on purpose; add the queue, the cache
-and the timeout; watch the latency curve recover. **Reading:** Book Ch. 11 · Google SRE
-Book, handling overload and cascading failures. **Project: P2 due.**
-
----
-
-### Week 8 — Checkpoint and project clinic
+### Week 7 — Midterm: checkpoint exam and project clinic
 **Full block.**
 
 - **0:00–1:15 — Checkpoint exam.** One design prompt, graded against the seven-step
-  rubric, half a page per step. Covers Weeks 1–7. Same format and rules as the final
+  rubric, half a page per step. Covers Weeks 1–6. Same format and rules as the final
   (see Week 14 and Policies), so you meet the format once before it counts for real.
 - **1:15–1:30 — Break.**
 - **1:30–3:00 — Project clinic.** Structured, not free work time:
@@ -355,13 +331,13 @@ Book, handling overload and cascading failures. **Project: P2 due.**
   - Quota planning: how many trajectory runs your Gemini budget affords before Week 11,
     and therefore how big your trajectory harness can be (15 min).
   - Pair reviews with the instructor, priority to pairs flagged in P2 grading
-    (remaining time; others get theirs in Week 9's lab hour).
+    (remaining time; others get theirs in Week 8's lab hour).
 
-**Project: P3 assigned.**
+**Project: P2 due. P3 assigned.**
 
 ---
 
-### Week 9 — How you build an agentic chatbot, part 1: the loop
+### Week 8 — How you build an agentic chatbot, part 1: the loop
 *The support-ticket agent: a model that names actions, and the program around it that takes them.*
 
 - **How it is built:** what the model actually does (a next-token distribution) and
@@ -382,7 +358,7 @@ read as a wire format.
 
 ---
 
-### Week 10 — How you build an agentic chatbot, part 2: state and orchestration
+### Week 9 — How you build an agentic chatbot, part 2: state and orchestration
 *The same agent across process death, with a human in the loop and a budget.*
 
 - **How it is built:** the orchestrator: what it owns (state, routing, dispatch,
@@ -402,7 +378,7 @@ read as a wire format.
 
 ---
 
-### Week 11 — The agentic chatbot with a second vendor: the integration and trust layer
+### Week 10 — The agentic chatbot with a second vendor: the integration and trust layer
 *A capability server you did not write appears. Discovery, description, invocation, contract, authorization, session.*
 
 - **How it is built:** the six integration problems and the current protocols as
@@ -418,11 +394,11 @@ read as a wire format.
 
 **Design Studio:** peer mock interviews on the full agent design. **Lab:** *Scoped
 token.* **Reading:** Book Ch. 25, 27 · the capability-protocol specification the scaffold
-uses, read as a primary source. **Project: P3 due. P4 assigned.**
+uses, read as a primary source.
 
 ---
 
-### Week 12 — The agentic chatbot under attack: security and safety
+### Week 11 — The agentic chatbot under attack: security and safety
 *The second vendor's response contains instructions. What does the system do, and what can it be made to do?*
 
 - **How it is built:** the threat model for a system that reads untrusted text and
@@ -436,13 +412,13 @@ uses, read as a primary source. **Project: P3 due. P4 assigned.**
   containment measured as what an attack could reach, not whether it was caught.
   *Introduced: red-team measurement.*
 
-**Design Studio:** system audit of the Week 11 designs. **Lab:** *Red team.* **Reading:**
+**Design Studio:** system audit of the Week 10 designs. **Lab:** *Red team.* **Reading:**
 Book Ch. 32, 33 · Willison, prompt injection and the lethal trifecta; OWASP Top 10 for
-LLM Applications.
+LLM Applications. **Project: P3 due. P4 assigned.**
 
 ---
 
-### Week 13 — Operating a live AI system
+### Week 12 — Operating a live AI system
 *Any of the above, in production for a year: the world moved, the vendor changed the model, and the pager went off.*
 
 - **How it is built:** alarms on cost, errors and quality; the vendor drift canary;
@@ -457,7 +433,13 @@ LLM Applications.
 
 **Design Studio:** the Week 1 envelope returns: redesign the fraud system with
 everything since. **Lab:** *Game day.* **Reading:** Book Ch. 29, 30, 31 · Google SRE
-Book, *Monitoring Distributed Systems*. **Project: P4 due. Repository tagged.**
+Book, *Monitoring Distributed Systems*.
+
+---
+
+### Week 13 — To be announced
+
+**Project: P4 due. Repository tagged.**
 
 ---
 
@@ -486,7 +468,7 @@ Book, *Monitoring Distributed Systems*. **Project: P4 due. Repository tagged.**
 |---|---|---|
 | Weekly homework | 10% | 10 multiple-choice questions, ~20 minutes, assigned after each block and due before the next: applied questions on the studio scenario plus 2–3 that can only be answered by having done the lab. Deliberately quick; you get the full week because you have lives. Lowest score dropped. |
 | Projects (4) | 40% | 10 each. Pairs. See [projects.md](https://aise-stthomas.github.io/projects). |
-| Checkpoint exam | 20% | Week 8, in the block. |
+| Checkpoint exam | 20% | Week 7, in the block. |
 | Final exam | 15% | Week 14, take-home timed window. |
 | Demo and defense | 15% | Week 14, live. The one assessment nobody can game. |
 
@@ -568,7 +550,7 @@ until chapters are drafted, selected chapters from:
 - Google *SRE Book* — selected chapters
 - Capability-protocol specifications — read as primary sources
 
-Weeks 9–11 require instructor-authored notes; that material does not yet exist in
+Weeks 8–10 require instructor-authored notes; that material does not yet exist in
 publishable form elsewhere, which is inconvenient for the semester and ideal for the
 book.
 

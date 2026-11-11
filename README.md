@@ -44,13 +44,13 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 4 | Tue, Oct 6 | How you build a scoring system | [slides](lectures/week-04/slides.pdf) | [Design the delivery-time estimate](lectures/week-04/studio.pdf) · [answers](lectures/week-04/studio-answers.pdf) | [Score every account, nightly and at the request](https://github.com/aise-stthomas/score-every-account/blob/main/LAB.md) | [reading](#reading-week-4) | P1 due Sun, Oct 11. |
 | 5 | Tue, Oct 13 | How you build a ranking system | [slides](lectures/week-05/slides.pdf) | [Design the simplified Amazon store front](lectures/week-05/studio.pdf) · [answers](lectures/week-05/studio-answers.pdf) | [Publish the API](https://github.com/aise-stthomas/publish-the-api/blob/main/LAB.md) | [reading](#reading-week-5) | [P2 assigned: Ship it.](https://github.com/aise-stthomas/ship-it) |
 | 6 | Tue, Oct 27 | How you build a retrieval-grounded assistant | [slides](lectures/week-06/slides.pdf) | [Design the airline's disruption assistant](lectures/week-06/studio.pdf) · [answers](lectures/week-06/studio-answers.pdf) | [Build the runbook index](https://github.com/aise-stthomas/build-the-runbook-index/blob/main/LAB.md) | [reading](#reading-week-6) | P2 continues. |
-| 7 | | How you build a generation service at volume | | | | [reading](#reading-week-7) | P2 due. |
-| 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
-| 9 | | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-09/slides.pdf) | [Design the refund agent](lectures/week-09/studio.pdf) · [answers](lectures/week-09/studio-answers.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-9) | |
-| 10 | | How you build an agentic chatbot, part 2: state and orchestration | | | | | |
-| 11 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
-| 12 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-12) | |
-| 13 | | Operating a live AI system | | | | [reading](#reading-week-13) | P4 due. Repository tagged. |
+| 7 | Tue, Nov 3 | Midterm: checkpoint exam and project clinic | | | | | P2 due. P3 assigned. |
+| 8 | Tue, Nov 10 | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-08/slides.pdf) | [Design the refund agent](lectures/week-08/studio.pdf) · [answers](lectures/week-08/studio-answers.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-8) | |
+| 9 | | How you build an agentic chatbot, part 2: state and orchestration | | | | | |
+| 10 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-10) | |
+| 11 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
+| 12 | | Operating a live AI system | | | | [reading](#reading-week-12) | |
+| 13 | | To be announced | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
 
 ## Reading
@@ -96,30 +96,25 @@ before it. The course book's chapters are listed in the syllabus.
 - Manning, Raghavan & Schütze, *Introduction to Information Retrieval*, Ch. 1 and §6.2 ([free online](https://nlp.stanford.edu/IR-book/))
 - Zheng et al., *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*, §1–3 ([arXiv 2306.05685](https://arxiv.org/abs/2306.05685))
 
-### Week 7 — How you build a generation service at volume
-{: #reading-week-7 }
-
-- Google SRE Book: handling overload, cascading failures
-
-### Week 9 — How you build an agentic chatbot, part 1: the loop
-{: #reading-week-9 }
+### Week 8 — How you build an agentic chatbot, part 1: the loop
+{: #reading-week-8 }
 
 - Anthropic, *Building Effective Agents*
 - a provider's tool-use API, read as a wire format
 
-### Week 11 — The agentic chatbot with a second vendor
-{: #reading-week-11 }
+### Week 10 — The agentic chatbot with a second vendor
+{: #reading-week-10 }
 
 - The capability-protocol specification the scaffold uses, read as a primary source
 
-### Week 12 — The agentic chatbot under attack
-{: #reading-week-12 }
+### Week 11 — The agentic chatbot under attack
+{: #reading-week-11 }
 
 - Willison on prompt injection and the lethal trifecta
 - OWASP Top 10 for LLM Applications
 
-### Week 13 — Operating a live AI system
-{: #reading-week-13 }
+### Week 12 — Operating a live AI system
+{: #reading-week-12 }
 
 - Google SRE Book, *Monitoring Distributed Systems*
 
