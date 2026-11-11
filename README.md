@@ -46,7 +46,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 6 | Tue, Oct 27 | How you build a retrieval-grounded assistant | [slides](lectures/week-06/slides.pdf) | [Design the airline's disruption assistant](lectures/week-06/studio.pdf) · [answers](lectures/week-06/studio-answers.pdf) | [Build the runbook index](https://github.com/aise-stthomas/build-the-runbook-index/blob/main/LAB.md) | [reading](#reading-week-6) | P2 continues. |
 | 7 | | How you build a generation service at volume | | | | [reading](#reading-week-7) | P2 due. |
 | 8 | | Checkpoint exam and project clinic | | | | | P3 assigned. |
-| 9 | | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-09/slides.pdf) | [Design the refund agent](lectures/week-09/studio.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-9) | |
+| 9 | | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-09/slides.pdf) | [Design the refund agent](lectures/week-09/studio.pdf) · [answers](lectures/week-09/studio-answers.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-9) | |
 | 10 | | How you build an agentic chatbot, part 2: state and orchestration | | | | | |
 | 11 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
 | 12 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-12) | |
