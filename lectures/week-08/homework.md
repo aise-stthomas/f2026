@@ -1,9 +1,9 @@
 # Week 8 — Homework
-### 10 multiple-choice questions
+### 20 multiple-choice questions
 
-> Questions 1–5 are on the lecture and the studio, 6–8 on the reading (Anthropic,
-> *Building Effective Agents*; a provider's tool-use API, read as a wire format), and
-> 9–10 on the lab. Assigned after the block, due before the next one.
+> Questions 1–5 and 11–16 are on the lecture and the studio, 6–8 and 17–20 on the reading
+> (Anthropic, *Building Effective Agents*, and a provider's tool-use API, read as a wire
+> format), and 9–10 on the lab. Assigned after the block, due before the next one.
 
 ---
 
@@ -91,3 +91,82 @@ runs. Which reading of that result is right?
 - (b) Whether a new version of the instructions raises the task success rate.
 - (c) Whether a different model is cheaper per task.
 - (d) Whether the model's success rate has drifted since the day the recording was made.
+
+**11.** In the lecture's measurements of the tool-calling modes, what came back when tools
+were switched off (NONE) but the declarations were still sent?
+
+- (a) Plain text in all 20 calls, since no tool could be named.
+- (b) A real tool from the registry in 14 of the 20 calls.
+- (c) The name of a tool that does not exist in 14 of the 20 calls.
+- (d) An error from the provider, since the request was contradictory.
+
+**12.** A run's first request is 575 tokens and its sixth is 1,337. A teammate changes
+`search_courses` to return each course's full record, five times larger than before. What
+happens to the run's cost?
+
+- (a) Only the turn that called `search_courses` costs more.
+- (b) Every later turn resends the larger results, so the growing part rises.
+- (c) Nothing changes, because tool results are not billed as input tokens.
+- (d) The first request grows, because tool results are sent as part of the declarations.
+
+**13.** Some providers offer constrained decoding for tool calls. What can it guarantee?
+
+- (a) That a call has the right shape, not that its arguments are right.
+- (b) That the arguments name a course that really exists in the catalog.
+- (c) That the model names a tool on every turn instead of answering.
+- (d) That a call never breaks a rule enforced inside the tool.
+
+**14.** A team adds `cancel_subscription` to its support agent. A cancelled subscription cannot
+be restored. Following the lecture's sorting of tools by what they can do, what does this tool
+need?
+
+- (a) A description that warns the model, clearly, that the action is permanent.
+- (b) Nothing more than any read tool, since the arguments are checked.
+- (c) A step limit low enough that the tool is rarely reached.
+- (d) Every rule in the tool, and a person or a hard limit before it runs.
+
+**15.** Each step of a run is right with probability 0.95, independently. About how likely is
+a run of 20 steps to be right at every step?
+
+- (a) 0.05
+- (b) 0.36
+- (c) 0.64
+- (d) 0.95
+
+**16.** In the lecture's table of memory, what is retrieved memory?
+
+- (a) The whole conversation so far, resent with every request.
+- (b) A summary of the earlier turns, written by the model.
+- (c) Notes in a searchable store, the closest few added per request.
+- (d) Notes kept in a file, added to the instructions of every request.
+
+**17.** *Building Effective Agents* describes both parallelization and orchestrator-workers.
+What does the reading say sets orchestrator-workers apart?
+
+- (a) The subtasks are not fixed in advance: the orchestrator picks them.
+- (b) Each subtask is run several times and the answers are voted on.
+- (c) A second model reviews each worker's output and asks for changes.
+- (d) The workers run one after another, each reading the output of the last.
+
+**18.** What does the reading advise about agent frameworks?
+
+- (a) Use one from the start, since the loop is hard to write correctly by hand.
+- (b) Avoid them, since they cannot call tools on most providers.
+- (c) Start with the model's API, and understand any framework you use.
+- (d) Use one only for workflows, never for agents.
+
+**19.** An agent's edit tool asks the model for a diff whose header must state exact line counts,
+and many edits fail. Which change follows the reading's appendix on tool formats?
+
+- (a) Add an example of a correctly counted header to the tool's description.
+- (b) Raise the step limit so a failed edit can be retried.
+- (c) Ask the model to return the diff inside a JSON string.
+- (d) Choose a format without the counting, closer to ordinary text.
+
+**20.** A response from the provider's API holds two `functionCall` parts: a seat count for
+CS3300 and one for CS3400. What should the program send in the next request?
+
+- (a) Only the first call's result, since the API answers one call per turn.
+- (b) The model's turn, then a `functionResponse` for each call.
+- (c) A new request asking the model to name one call at a time.
+- (d) Both results as plain text in a new user message.
