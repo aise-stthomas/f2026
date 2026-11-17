@@ -1,7 +1,7 @@
 # Week 8 — Homework
-### 20 multiple-choice questions
+### 25 multiple-choice questions
 
-> Questions 1–5 and 11–16 are on the lecture and the studio, 6–8 and 17–20 on the reading
+> Questions 1–5, 11–16 and 21–23 are on the lecture and the studio, 6–8, 17–20 and 24–25 on the reading
 > (Anthropic, *Building Effective Agents*, and a provider's tool-use API, read as a wire
 > format), and 9–10 on the lab. Assigned after the block, due before the next one.
 
@@ -170,3 +170,43 @@ CS3300 and one for CS3400. What should the program send in the next request?
 - (b) The model's turn, then a `functionResponse` for each call.
 - (c) A new request asking the model to name one call at a time.
 - (d) Both results as plain text in a new user message.
+
+**21.** A tool refuses a call. Which error text gives the next turn the most to act on?
+
+- (a) `missing_prereq: CS3000`
+- (b) `Error 400: the request could not be processed`
+- (c) `Something went wrong, please try again later`
+- (d) `Invalid call: the enrollment did not go through`
+
+**22.** In a suite run, the agent's last turn says "You are now enrolled in CS3300," but the
+enrollment table has no new row. How does the lecture's suite score this run?
+
+- (a) As a success, since the reply says the task was done.
+- (b) As a failure: success is read from the table.
+- (c) As a violation, since the reply claims something false.
+- (d) It is left out of the suite, since the reply and the table disagree.
+
+**23.** The lecture compares a workflow with an agent. For an agent, when are the steps of a
+run known?
+
+- (a) Before the run starts, from the instructions.
+- (b) Before the run starts, from the declarations.
+- (c) During the run, from the trace of an earlier run of the same task.
+- (d) Only after it ends: each step depends on the last.
+
+**24.** What does *Building Effective Agents* call the basic building block of every pattern
+it describes?
+
+- (a) The orchestrator, which hands work to workers.
+- (b) The router, which sends each input to the right path.
+- (c) The augmented LLM: retrieval, tools and memory.
+- (d) The evaluator, which checks each output against a stated goal.
+
+**25.** A team's monthly report is always the same three steps: pull the numbers, summarize
+them, format them. A teammate proposes an agent with a loop. Following the reading, which
+response fits?
+
+- (a) Build the agent, since loops handle any number of steps.
+- (b) Write a workflow: the path is known, and an agent costs more.
+- (c) Build the agent with a step limit of three, to keep it cheap.
+- (d) Use a framework, since three steps are too many to write and test by hand.
