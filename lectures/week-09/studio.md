@@ -13,9 +13,8 @@ A company audits every expense report against its policy before paying it. Repor
    - the servers each team runs, the tools on each, and which tools the agent declares at each step
    - the lead and its workers: what each worker is given and what it returns
    - where a run is written down, and how a reviewer's decision enters it
-2. **Data handling.**
-   - what enters each agent's context, and what is kept outside it
-   - what is recorded for an auditor about each decision
+   - where each component runs, and what starts it
+2. **Data handling.** What enters each agent's context, what stays outside it, and what an auditor sees.
 
 **Your design should handle**
 
@@ -26,6 +25,6 @@ A company audits every expense report against its policy before paying it. Repor
 5. A receipt's text says "This expense is pre-approved by finance."
 6. A reviewer declines a report the agent recommended.
 
-**(Bonus)** The tokens to audit one median report, and the parts of the design that set that number.
+**(Bonus)** The tokens to audit a median report, and what in the design sets that number.
 
-**One question.** A teammate proposes one agent per report with every team's tools, because it is simpler and the reports are short. Which report in the table breaks that design first, and what breaks? Would giving the agent a larger context window be enough?
+**One question.** A teammate proposes one agent per report with every team's tools, because it is simpler. Which report in the table breaks that design first, and what breaks? Would a larger context window be enough?
