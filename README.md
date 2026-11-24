@@ -47,10 +47,10 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 7 | Tue, Nov 3 | Midterm: checkpoint exam and project clinic | | | | | P2 due. P3 assigned. |
 | 8 | Tue, Nov 10 | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-08/slides.pdf) | [Design the refund agent](lectures/week-08/studio.pdf) · [answers](lectures/week-08/studio-answers.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-8) | |
 | 9 | Tue, Nov 17 | How you build an agentic chatbot, part 2: state and orchestration | [slides](lectures/week-09/slides.pdf) | [Design the expense audit agent](lectures/week-09/studio.pdf) | [Build a coding agent](https://github.com/aise-stthomas/build-a-coding-agent/blob/main/LAB.md) | [reading](#reading-week-9) | |
-| 10 | | The agentic chatbot with a second vendor: the integration and trust layer | | | | [reading](#reading-week-10) | |
-| 11 | | The agentic chatbot under attack: security and safety | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
+| 10 | | How you measure an agent | [slides](lectures/week-10/slides.pdf) | [Measure the build-fixing agent](lectures/week-10/studio.pdf) | | [reading](#reading-week-10) | |
+| 11 | | The agentic chatbot under attack: security, safety, and another vendor's agent | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
 | 12 | | Operating a live AI system | | | | [reading](#reading-week-12) | |
-| 13 | | To be announced | | | | | P4 due. Repository tagged. |
+| 13 | | Your own model: fine-tuning, serving, and when it pays | | | | | P4 due. Repository tagged. |
 | 14 | | Demos and final | | | | | |
 
 ## Reading
@@ -108,12 +108,13 @@ before it. The course book's chapters are listed in the syllabus.
 - Anthropic, *How we built our multi-agent research system* (2025) ([anthropic.com](https://www.anthropic.com/engineering/multi-agent-research-system))
 - The Model Context Protocol specification, version 2026-07-28: the tools page ([modelcontextprotocol.io](https://modelcontextprotocol.io/specification/2026-07-28/server/tools))
 
-### Week 10 — The agentic chatbot with a second vendor
+### Week 10 — How you measure an agent
 {: #reading-week-10 }
 
-- The capability-protocol specification the scaffold uses, read as a primary source
+- Cursor, *Reward hacking is swamping model intelligence gains* (2026) ([cursor.com](https://cursor.com/blog/reward-hacking-coding-benchmarks))
+- Yao et al., *τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains* (2024) ([arxiv.org](https://arxiv.org/abs/2406.12045))
 
-### Week 11 — The agentic chatbot under attack
+### Week 11 — The agentic chatbot under attack, and another vendor's agent
 {: #reading-week-11 }
 
 - Willison on prompt injection and the lethal trifecta
