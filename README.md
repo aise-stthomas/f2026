@@ -47,7 +47,7 @@ an HTTP API. No cloud, container, or distributed-systems background required.
 | 7 | Tue, Nov 3 | Midterm: checkpoint exam and project clinic | | | | | P2 due. P3 assigned. |
 | 8 | Tue, Nov 10 | How you build an agentic chatbot, part 1: the loop | [slides](lectures/week-08/slides.pdf) | [Design the refund agent](lectures/week-08/studio.pdf) · [answers](lectures/week-08/studio-answers.pdf) | [Trace the loop](https://github.com/aise-stthomas/trace-the-loop/blob/main/LAB.md) | [reading](#reading-week-8) | |
 | 9 | Tue, Nov 17 | How you build an agentic chatbot, part 2: state and orchestration | [slides](lectures/week-09/slides.pdf) | [Design the expense audit agent](lectures/week-09/studio.pdf) | [Build a coding agent](https://github.com/aise-stthomas/build-a-coding-agent/blob/main/LAB.md) | [reading](#reading-week-9) | |
-| 10 | | How you measure an agent | [slides](lectures/week-10/slides.pdf) | [Measure the build-fixing agent](lectures/week-10/studio.pdf) | | [reading](#reading-week-10) | |
+| 10 | | How you measure an agent | [slides](lectures/week-10/slides.pdf) | [Measure the build-fixing agent](lectures/week-10/studio.pdf) | [Measure the coding agent](https://github.com/aise-stthomas/measure-the-coding-agent/blob/main/LAB.md) | [reading](#reading-week-10) | |
 | 11 | | The agentic chatbot under attack: security, safety, and another vendor's agent | | | | [reading](#reading-week-11) | P3 due. P4 assigned. |
 | 12 | | Operating a live AI system | | | | [reading](#reading-week-12) | |
 | 13 | | Your own model: fine-tuning, serving, and when it pays | | | | | P4 due. Repository tagged. |
